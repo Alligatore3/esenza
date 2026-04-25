@@ -52,12 +52,15 @@ const localePath = useLocalePath()
         </div>
         <!-- Floating badge -->
         <div
-          class="absolute bottom-6 -left-4 md:-left-8 bg-white dark:bg-surface-dark rounded-2xl shadow-lg px-4 py-3 flex items-center gap-3"
+          class="absolute -bottom-6 -left-6 md:bottom-10 md:-left-10 bg-white dark:bg-dark-nav p-4 rounded-xl shadow-xl border border-border-light dark:border-white/5 flex items-center gap-3 animate-bounce"
+          style="animation-duration: 3s"
         >
-          <span class="material-symbols-outlined text-primary text-[28px]">recycling</span>
+          <div class="bg-primary/20 p-2 rounded-full text-primary">
+            <span class="material-symbols-outlined">eco</span>
+          </div>
           <div>
-            <p class="text-xs font-bold text-text-main dark:text-white">{{ t('home.hero.floatingBadgeLine1') }}</p>
-            <p class="text-xs text-text-muted dark:text-white/60">{{ t('home.hero.floatingBadgeLine2') }}</p>
+            <p class="text-sm font-bold text-text-main dark:text-white">{{ t('home.hero.floatingBadgeLine1') }}</p>
+            <p class="text-xs text-text-muted">{{ t('home.hero.floatingBadgeLine2') }}</p>
           </div>
         </div>
       </div>
