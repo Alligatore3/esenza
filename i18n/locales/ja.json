@@ -1,0 +1,204 @@
+{
+  "nav": {
+    "shop": "ショップ",
+    "about": "私たちについて",
+    "howItWorks": "使い方",
+    "contact": "お問い合わせ",
+    "journal": "ジャーナル",
+    "search": "検索",
+    "cart": "カート"
+  },
+  "home": {
+    "hero": {
+      "badge": "新商品",
+      "title": "イタリアのオーガニックミックス。シンプルに、手作りを。",
+      "subtitle": "Italian Organic Mixes. Made Simple.",
+      "body": "トスカーナの本場の味をあなたのキッチンへ。プレミアムな瓶詰めミックスにオイルと水を加えるだけ。",
+      "cta": "ショップへ",
+      "ctaSecondary": "ブランドストーリー",
+      "floatingBadgeLine1": "プラスチックフリー",
+      "floatingBadgeLine2": "100% ガラス＆コルク"
+    },
+    "features": {
+      "title": "ゼロウェイスト。100%の美味しさ。",
+      "subtitle": "サステナブルで、美味しい。イタリアの厳選素材を日本のガラス瓶に詰め込みました。"
+    },
+    "products": {
+      "title": "フィーチャードコレクション",
+      "subtitle": "あらゆるシーンに合わせたミックス",
+      "viewAll": "全商品を見る"
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "2023年創業",
+      "title": "瓶詰めの芸術",
+      "subtitle": "The Art of Jar Mixes",
+      "body": "イタリアのオーガニック農業の本場の味を、日本のキッチンへ。シンプルで、サステナブルで、純粋においしい。"
+    },
+    "mission": {
+      "title": "廃棄物ゼロ、味は満点",
+      "titleJa": "Zero Waste, Full Taste",
+      "body": "私たちのミッションはシンプルです：風味を妥協することなくごみを減らすこと。すべての瓶は再利用、補充、または返却できるように設計されています。",
+      "feature1Title": "再利用可能な瓶",
+      "feature1Sub": "サステナブルなガラス素材",
+      "feature2Title": "カーボンニュートラル配送",
+      "feature2Sub": "全ての配送でオフセット"
+    },
+    "origin": {
+      "title": "イタリア生まれ、日本育ち",
+      "titleJa": "Born in Italy, Loved in Japan",
+      "body": "すべての瓶は、トスカーナとエミリア＝ロマーニャの陽光あふれる農地から旅を始めます。そこでは、パートナー農家が代々の伝統を守りながら認証済みオーガニック食材を丁寧に育てています。"
+    },
+    "philosophy": {
+      "title": "私たちのこだわり",
+      "titleJa": "Our Philosophy",
+      "card1Title": "100%オーガニック",
+      "card1TitleJa": "100% Organic",
+      "card1Body": "農薬やGMOを使用しない認証済みオーガニック食材。",
+      "card2Title": "ヴィーガン対応",
+      "card2TitleJa": "Vegan Friendly",
+      "card2Body": "あなたの体と地球に優しい植物由来のレシピ。",
+      "card3Title": "手作業での梱包",
+      "card3TitleJa": "Hand-Packed",
+      "card3Body": "すべての瓶は精密さと丁寧さをもって手作業で詰められています。"
+    },
+    "quote": {
+      "text": "真の贅沢はシンプルさにあると私たちは信じています。食べ物がどこから来るか知ること、そしてそれが地球に害を与えていないと知ること。",
+      "author": "ジュリア＆ケンジ",
+      "role": "共同創業者、èSenza"
+    }
+  },
+  "howItWorks": {
+    "hero": {
+      "title": "ご利用ガイド",
+      "titleJa": "How It Works",
+      "subtitle": "本場イタリアのオーガニックミックスを、あなたのキッチンへお届けします。",
+      "subtitleJa": "Authentic Italian organic mixes delivered to your kitchen.",
+      "cta": "ショッピングを始める"
+    },
+    "process": {
+      "eyebrow": "プロセス",
+      "title": "イタリアをあなたに",
+      "titleJa": "Bringing Italy to You",
+      "subtitle": "シンプルな3ステップで、最高鮮度の食材を最小限の手間でお届けします。"
+    },
+    "steps": {
+      "step1Tag": "選択",
+      "step1Title": "お好みのミックスを選ぶ",
+      "step1TitleJa": "Choose Your Mix",
+      "step1Body": "ケーキ、クッキー、スープなど、厳選されたオーガニック製品からお選びください。",
+      "step1BodyJa": "Select from our curated range of organic cakes, cookies, soups, and more.",
+      "step2Tag": "調理",
+      "step2Title": "簡単な調理",
+      "step2TitleJa": "Simple Preparation",
+      "step2Body": "卵、油、水などの新鮮な液体材料を加えるだけ。",
+      "step2BodyJa": "Just add fresh wet ingredients like eggs, oil, or water to the mix.",
+      "step3Tag": "楽しむ",
+      "step3Title": "本場イタリアの味",
+      "step3TitleJa": "Taste of Italy",
+      "step3Body": "ヘルシーでオーガニック、そして美味しいイタリアの味をご家族や友人と楽しんでください。",
+      "step3BodyJa": "Enjoy healthy, organic, and delicious Italian flavors with your family and friends."
+    },
+    "trust": {
+      "item1Title": "100% オーガニック",
+      "item1TitleJa": "100% Organic",
+      "item2Title": "イタリア製",
+      "item2TitleJa": "Made in Italy",
+      "item3Title": "エコパッケージ",
+      "item3TitleJa": "Eco Packaging"
+    },
+    "shipping": {
+      "title": "玄関先までお届け",
+      "subtitle": "日本全国への信頼性の高い、チルド配送。",
+      "zonesTitle": "配送エリア",
+      "zonesTitleJa": "Shipping Zones",
+      "zone1Area": "本州・四国",
+      "zone1Time": "1〜2日",
+      "zone2Area": "九州・北海道",
+      "zone2Time": "2〜3日",
+      "zone3Area": "沖縄・離島",
+      "zone3Time": "3〜5日",
+      "tempTitle": "温度管理",
+      "tempTitleJa": "Temperature Control",
+      "tempBody": "季節や商品の内容に応じて、クール宅急便を利用し、商品が新鮮で完璧な状態でお届けできるよう努めています。",
+      "cta": "ショッピングを始める"
+    }
+  },
+  "shop": {
+    "hero": {
+      "title": "商品一覧",
+      "titleJa": "Shop Our Mixes",
+      "subtitle": "瓶に詰まった、プレミアムオーガニック食材。",
+      "subtitleJa": "Premium organic ingredients in a jar. Crafted in Italy, enjoyed in Japan."
+    },
+    "filters": {
+      "all": "全て",
+      "allJa": "All",
+      "sweet": "甘い",
+      "sweetJa": "Sweet",
+      "savory": "お食事",
+      "savoryJa": "Savory",
+      "vegan": "ヴィーガン",
+      "gf": "グルテンフリー"
+    },
+    "productCount": "{count} 商品",
+    "loadMore": "もっと見る",
+    "newsletter": {
+      "title": "èSenzaライフスタイルに参加",
+      "subtitle": "無料レシピ、限定割引、サステナブルな暮らしのヒントをお届けします。"
+    }
+  },
+  "product": {
+    "breadcrumb": {
+      "home": "ホーム",
+      "shop": "ショップ"
+    },
+    "taxNote": "税込",
+    "addToCart": "カートに追加",
+    "subscribe": "定期購入で10%オフ",
+    "howToPrepare": "作り方",
+    "howToPrepareJa": "How to prepare",
+    "ingredients": "原材料",
+    "sustainabilityTitle": "プラスチックフリーパッケージ",
+    "sustainabilityBody": "瓶は100%ガラス製、金属蓋付き。食品庫の保存容器として再利用したり、エンドレスにリサイクルできます。",
+    "tabs": {
+      "description": "説明",
+      "nutrition": "栄養成分表",
+      "reviews": "レビュー"
+    },
+    "storageNote": "冷暗所で保存してください。開封後は6ヶ月以内にお召し上がりください。"
+  },
+  "footer": {
+    "tagline": "オーガニックミックス。シンプルで、サステナブルで、イタリア直送。",
+    "shopTitle": "ショップ",
+    "bestsellers": "ベストセラー",
+    "vegan": "ヴィーガンミックス",
+    "sweets": "スイーツ",
+    "gifts": "ギフトセット",
+    "companyTitle": "会社情報",
+    "about": "私たちについて",
+    "sustainability": "サステナビリティ",
+    "journal": "ジャーナル",
+    "contact": "お問い合わせ",
+    "newsletterTitle": "ニュースレター",
+    "newsletterPlaceholder": "メールアドレス",
+    "newsletterButton": "登録",
+    "copyright": "© 2024 èSenza Japan. 無断転載禁止。",
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約"
+  },
+  "newsletter": {
+    "title": "ファミリーに参加",
+    "subtitle": "レシピ、サステナビリティのヒント、限定オファーをお届けします。",
+    "placeholder": "メールアドレス",
+    "button": "登録"
+  },
+  "common": {
+    "viewAll": "全て見る",
+    "loadMore": "もっと見る",
+    "backToShop": "ショップに戻る",
+    "addToCart": "カートに追加",
+    "yen": "¥"
+  }
+}

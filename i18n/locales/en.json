@@ -1,0 +1,204 @@
+{
+  "nav": {
+    "shop": "Shop",
+    "about": "About",
+    "howItWorks": "How It Works",
+    "contact": "Contact",
+    "journal": "Journal",
+    "search": "Search",
+    "cart": "Cart"
+  },
+  "home": {
+    "hero": {
+      "badge": "New Arrival",
+      "title": "Italian Organic Mixes. Made Simple.",
+      "subtitle": "イタリアのオーガニックミックス。シンプルに、手作りを。",
+      "body": "Bring the authentic taste of Tuscany to your kitchen. Just add oil and water to our premium pre-mixed jars.",
+      "cta": "Shop Now",
+      "ctaSecondary": "Our Story",
+      "floatingBadgeLine1": "Plastic Free",
+      "floatingBadgeLine2": "100% Glass & Cork"
+    },
+    "features": {
+      "title": "Zero Waste. 100% Taste.",
+      "subtitle": "Sustainable, delicious. Premium Italian ingredients packed into Japanese glass jars."
+    },
+    "products": {
+      "title": "Featured Collections",
+      "subtitle": "Curated mixes for every occasion",
+      "viewAll": "View All Products"
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "Since 2023",
+      "title": "The Art of Jar Mixes",
+      "subtitle": "エセンツァ：瓶詰めの芸術",
+      "body": "Bringing the authentic taste of Italian organic farming to your Japanese kitchen. Simple, sustainable, and purely delicious."
+    },
+    "mission": {
+      "title": "Zero Waste, Full Taste",
+      "titleJa": "廃棄物ゼロ、味は満点",
+      "body": "Our mission is simple: reduce waste without compromising on flavor. Every jar is designed to be reused, refilled, or returned.",
+      "feature1Title": "Reusable Jars",
+      "feature1Sub": "Sustainable glass packaging",
+      "feature2Title": "Carbon Neutral Delivery",
+      "feature2Sub": "Offsetting every kilometer"
+    },
+    "origin": {
+      "title": "Born in Italy, Loved in Japan",
+      "titleJa": "イタリア生まれ、日本育ち",
+      "body": "Every jar begins its journey in the sun-drenched fields of Tuscany and Emilia-Romagna, where our partner farmers grow certified organic ingredients with generations of tradition."
+    },
+    "philosophy": {
+      "title": "Our Philosophy",
+      "titleJa": "私たちのこだわり",
+      "card1Title": "100% Organic",
+      "card1TitleJa": "有機食材",
+      "card1Body": "Certified organic ingredients free from pesticides and GMOs.",
+      "card2Title": "Vegan Friendly",
+      "card2TitleJa": "ヴィーガン対応",
+      "card2Body": "Plant-based recipes that are kind to your body and the planet.",
+      "card3Title": "Hand-Packed",
+      "card3TitleJa": "手作業での梱包",
+      "card3Body": "Every jar is layered by hand with precision and care."
+    },
+    "quote": {
+      "text": "We believe that true luxury lies in simplicity. Knowing where your food comes from, and knowing that it caused no harm to the earth.",
+      "author": "Giulia & Kenji",
+      "role": "Co-Founders, èSenza"
+    }
+  },
+  "howItWorks": {
+    "hero": {
+      "title": "How It Works",
+      "titleJa": "ご利用ガイド",
+      "subtitle": "Authentic Italian organic mixes delivered to your kitchen.",
+      "subtitleJa": "本場イタリアのオーガニックミックスを、あなたのキッチンへお届けします。",
+      "cta": "Start Your Journey"
+    },
+    "process": {
+      "eyebrow": "The Process",
+      "title": "Bringing Italy to You",
+      "titleJa": "イタリアをあなたに",
+      "subtitle": "Our simple 3-step process ensures you get the freshest ingredients with minimal effort."
+    },
+    "steps": {
+      "step1Tag": "SELECTION",
+      "step1Title": "Choose Your Mix",
+      "step1TitleJa": "お好みのミックスを選ぶ",
+      "step1Body": "Select from our curated range of organic cakes, cookies, soups, and more.",
+      "step1BodyJa": "ケーキ、クッキー、スープなど、厳選されたオーガニック製品からお選びください。",
+      "step2Tag": "PREPARATION",
+      "step2Title": "Simple Preparation",
+      "step2TitleJa": "簡単な調理",
+      "step2Body": "Just add fresh wet ingredients like eggs, oil, or water to the mix.",
+      "step2BodyJa": "卵、油、水などの新鮮な液体材料を加えるだけ。",
+      "step3Tag": "ENJOYMENT",
+      "step3Title": "Taste of Italy",
+      "step3TitleJa": "本場イタリアの味",
+      "step3Body": "Enjoy healthy, organic, and delicious Italian flavors with your family and friends.",
+      "step3BodyJa": "ヘルシーでオーガニック、そして美味しいイタリアの味をお楽しみください。"
+    },
+    "trust": {
+      "item1Title": "100% Organic",
+      "item1TitleJa": "100% オーガニック",
+      "item2Title": "Made in Italy",
+      "item2TitleJa": "イタリア製",
+      "item3Title": "Eco Packaging",
+      "item3TitleJa": "エコパッケージ"
+    },
+    "shipping": {
+      "title": "Delivery to Your Door",
+      "subtitle": "Reliable, chilled shipping across all of Japan.",
+      "zonesTitle": "Shipping Zones",
+      "zonesTitleJa": "配送エリア",
+      "zone1Area": "Honshu & Shikoku",
+      "zone1Time": "1-2 Days",
+      "zone2Area": "Kyushu & Hokkaido",
+      "zone2Time": "2-3 Days",
+      "zone3Area": "Okinawa & Islands",
+      "zone3Time": "3-5 Days",
+      "tempTitle": "Temperature Control",
+      "tempTitleJa": "温度管理",
+      "tempBody": "Depending on the season and the mix content, we utilize Cool Ta-Q-Bin (クール宅急便) to ensure your products arrive fresh and perfectly preserved.",
+      "cta": "Start Your Journey"
+    }
+  },
+  "shop": {
+    "hero": {
+      "title": "Shop Our Mixes",
+      "titleJa": "商品一覧",
+      "subtitle": "Premium organic ingredients in a jar. Crafted in Italy, enjoyed in Japan.",
+      "subtitleJa": "瓶に詰まった、プレミアムオーガニック食材。"
+    },
+    "filters": {
+      "all": "All",
+      "allJa": "全て",
+      "sweet": "Sweet",
+      "sweetJa": "甘い",
+      "savory": "Savory",
+      "savoryJa": "お食事",
+      "vegan": "Vegan",
+      "gf": "Gluten-Free"
+    },
+    "productCount": "{count} Products",
+    "loadMore": "Load More Products",
+    "newsletter": {
+      "title": "Join the èSenza Lifestyle",
+      "subtitle": "Get free recipes, exclusive discounts, and tips on sustainable living."
+    }
+  },
+  "product": {
+    "breadcrumb": {
+      "home": "Home",
+      "shop": "Shop"
+    },
+    "taxNote": "Tax included",
+    "addToCart": "Add to Cart",
+    "subscribe": "Subscribe & Save 10%",
+    "howToPrepare": "How to prepare",
+    "howToPrepareJa": "作り方",
+    "ingredients": "Ingredients",
+    "sustainabilityTitle": "Plastic Free Packaging",
+    "sustainabilityBody": "Our jars are 100% glass with metal lids. Reuse them for your pantry or recycle them endlessly.",
+    "tabs": {
+      "description": "Description",
+      "nutrition": "Nutrition Facts",
+      "reviews": "Reviews"
+    },
+    "storageNote": "Store in a cool, dry place. Best consumed within 6 months of opening."
+  },
+  "footer": {
+    "tagline": "Organic mixes. Simple, sustainable, and straight from Italy.",
+    "shopTitle": "Shop",
+    "bestsellers": "Bestsellers",
+    "vegan": "Vegan Mixes",
+    "sweets": "Sweets",
+    "gifts": "Gift Sets",
+    "companyTitle": "Company",
+    "about": "About Us",
+    "sustainability": "Sustainability",
+    "journal": "Journal",
+    "contact": "Contact",
+    "newsletterTitle": "Newsletter",
+    "newsletterPlaceholder": "Your email",
+    "newsletterButton": "Join",
+    "copyright": "© 2024 èSenza Japan. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "newsletter": {
+    "title": "Join the Family",
+    "subtitle": "Get recipes, sustainability tips, and exclusive offers straight to your inbox.",
+    "placeholder": "Your email address",
+    "button": "Subscribe"
+  },
+  "common": {
+    "viewAll": "View All",
+    "loadMore": "Load More",
+    "backToShop": "Back to Shop",
+    "addToCart": "Add to Cart",
+    "yen": "¥"
+  }
+}

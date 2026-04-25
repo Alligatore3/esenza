@@ -1,0 +1,16 @@
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  user-select: none;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f6f8f6; }
+::-webkit-scrollbar-thumb { background: #dee5dc; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #4ce619; }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+:root {
+  --header-height: 65px;
+}
