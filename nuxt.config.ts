@@ -9,6 +9,15 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
   ],
 
+  components: [
+    { path: '~/components/App', pathPrefix: false },
+    { path: '~/components/ui', pathPrefix: false },
+    { path: '~/components/home', pathPrefix: false },
+    { path: '~/components/about', pathPrefix: false },
+    { path: '~/components/how', pathPrefix: false },
+    { path: '~/components/shop', pathPrefix: false },
+  ],
+
   css: ['~/assets/css/main.css'],
 
   colorMode: {

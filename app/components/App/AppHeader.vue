@@ -18,7 +18,7 @@ const isActive = (path: string) => route.path === localePath(path) || route.path
     class="sticky top-0 z-50 w-full bg-white/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-border-light dark:border-border-soft/20 transition-colors duration-300"
     style="height: var(--header-height)"
   >
-    <div class="flex items-center justify-between h-full px-4 md:px-10 lg:px-16 max-w-wide mx-auto">
+    <div class="flex items-center justify-between h-full px-4 md:px-10 lg:px-16 container mx-auto">
       <!-- Logo -->
       <NuxtLink :to="localePath('/')" class="flex-shrink-0" @click="mobileOpen = false">
         <AppLogo />
