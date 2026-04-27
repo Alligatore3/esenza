@@ -10,143 +10,143 @@
   },
   "home": {
     "hero": {
-      "badge": "New Arrival",
-      "title": "Italian Organic Mixes. Made Simple.",
-      "subtitle": "イタリアのオーガニックミックス。シンプルに、手作りを。",
-      "body": "Bring the authentic taste of Tuscany to your kitchen. Just add oil and water to our premium pre-mixed jars.",
+      "badge": "Italian Organic Mixes",
+      "title": "Where Does a Project Begin?",
+      "subtitle": "A conscious way of shopping, born in Schio and brought to Japan.",
+      "body": "èSenza was founded in Schio, in the province of Vicenza, as a bulk shopping concept combined with the selection of small Italian producers. Today, its prepared mixes bring a simple, authentic, and sustainable Italian culinary experience to your kitchen.",
       "cta": "Shop Now",
       "ctaSecondary": "Our Story",
-      "floatingBadgeLine1": "Plastic Free",
-      "floatingBadgeLine2": "100% Glass & Cork"
+      "floatingBadgeLine1": "Zero Waste",
+      "floatingBadgeLine2": "Organic Ingredients"
     },
     "features": {
-      "title": "Zero Waste. 100% Taste.",
-      "subtitle": "Sustainable, delicious. Premium Italian ingredients packed into Japanese glass jars."
+      "title": "Without Waste. Without Excess. With Real Taste.",
+      "subtitle": "A selection guided by transparency, clear supply chains, small producers, and careful attention to environmental impact."
     },
     "products": {
-      "title": "Featured Collections",
-      "subtitle": "Curated mixes for every occasion",
+      "title": "Prepared Mixes from Italy",
+      "subtitle": "Jarred recipes made with certified organic ingredients, designed for simple preparation at home.",
       "viewAll": "View All Products"
     }
   },
   "about": {
     "hero": {
-      "badge": "Since 2023",
-      "title": "The Art of Jar Mixes",
-      "subtitle": "エセンツァ：瓶詰めの芸術",
-      "body": "Bringing the authentic taste of Italian organic farming to your Japanese kitchen. Simple, sustainable, and purely delicious."
+      "badge": "Founded in 2021",
+      "title": "The Story of èSenza",
+      "subtitle": "A family project built around quality, care, and conscious choices.",
+      "body": "èSenza was founded on February 15, 2021, from an idea by Ornella: to create a space where products would be good for those who buy them, fair for those who produce them, and gentle on the environment. A few months later, Martina joined the project, turning it into a family business built day by day with care, dialogue, and a strong bond between generations."
     },
     "mission": {
-      "title": "Zero Waste, Full Taste",
-      "titleJa": "廃棄物ゼロ、味は満点",
-      "body": "Our mission is simple: reduce waste without compromising on flavor. Every jar is designed to be reused, refilled, or returned.",
-      "feature1Title": "Reusable Jars",
-      "feature1Sub": "Sustainable glass packaging",
-      "feature2Title": "Carbon Neutral Delivery",
-      "feature2Sub": "Offsetting every kilometer"
+      "title": "Good for People, Fair for Producers, Gentle on the Environment",
+      "titleJa": "Our Mission",
+      "body": "The project developed around a shared passion: the pursuit of quality, respect for seasonality, and support for small artisan producers who often struggle to find space in large-scale retail. For èSenza, telling their stories is just as important as offering their products.",
+      "feature1Title": "Responsible Selection",
+      "feature1Sub": "Products chosen through transparency, quality, and clear supply chains.",
+      "feature2Title": "Zero-Waste Philosophy",
+      "feature2Sub": "A daily commitment to reducing packaging, waste, pollution, and exploitation."
     },
     "origin": {
-      "title": "Born in Italy, Loved in Japan",
-      "titleJa": "イタリア生まれ、日本育ち",
-      "body": "Every jar begins its journey in the sun-drenched fields of Tuscany and Emilia-Romagna, where our partner farmers grow certified organic ingredients with generations of tradition."
+      "title": "Here We Are",
+      "titleJa": "Founders",
+      "body": "We are Ornella and Martina — the heart and soul of èSenza. The project began with Ornella’s desire to create a place dedicated to small producers, seasonality, refill culture, and conscious choices. Martina joined a few months later, leaving her previous job to fully believe in the project and help transform it into a family business with a wider vision."
     },
     "philosophy": {
-      "title": "Our Philosophy",
-      "titleJa": "私たちのこだわり",
-      "card1Title": "100% Organic",
-      "card1TitleJa": "有機食材",
-      "card1Body": "Certified organic ingredients free from pesticides and GMOs.",
-      "card2Title": "Vegan Friendly",
-      "card2TitleJa": "ヴィーガン対応",
-      "card2Body": "Plant-based recipes that are kind to your body and the planet.",
-      "card3Title": "Hand-Packed",
-      "card3TitleJa": "手作業での梱包",
-      "card3Body": "Every jar is layered by hand with precision and care."
+      "title": "Founders & Vision",
+      "titleJa": "Ornella & Martina",
+      "card1Title": "Ornella",
+      "card1TitleJa": "Founder",
+      "card1Body": "Deeply connected to simple living, nature, evening reading, and genuine products, Ornella created èSenza from the desire to give value to small producers and to offer a more conscious way of shopping.",
+      "card2Title": "Martina",
+      "card2TitleJa": "Co-Founder",
+      "card2Body": "Martina joined the project in May 2021, choosing to leave her previous job and become a partner in every sense. Her contribution helped turn èSenza into a family business built with care, dialogue, and shared responsibility.",
+      "card3Title": "Shared Vision",
+      "card3TitleJa": "A Conscious Future",
+      "card3Body": "Together, Ornella and Martina want èSenza to remain a place where quality, transparency, sustainability, and human relationships come before speed, excess, and anonymous consumption."
     },
     "quote": {
-      "text": "We believe that true luxury lies in simplicity. Knowing where your food comes from, and knowing that it caused no harm to the earth.",
-      "author": "Giulia & Kenji",
-      "role": "Co-Founders, èSenza"
+      "text": "We like to believe that, through our work, we can contribute — even in our own small way — to a more conscious, kinder, and more respectful world.",
+      "author": "Ornella Trevisan & Martina Sartore",
+      "role": "Founders, èSenza"
     }
   },
   "howItWorks": {
     "hero": {
       "title": "How It Works",
-      "titleJa": "ご利用ガイド",
-      "subtitle": "Authentic Italian organic mixes delivered to your kitchen.",
-      "subtitleJa": "本場イタリアのオーガニックミックスを、あなたのキッチンへお届けします。",
+      "titleJa": "Simple Italian Recipes at Home",
+      "subtitle": "Each mix is designed to be simple to use while leaving room for the pleasure of cooking.",
+      "subtitleJa": "Inside each jar, you will find organic ingredients already measured and combined according to our recipe.",
       "cta": "Start Your Journey"
     },
     "process": {
       "eyebrow": "The Process",
-      "title": "Bringing Italy to You",
-      "titleJa": "イタリアをあなたに",
-      "subtitle": "Our simple 3-step process ensures you get the freshest ingredients with minimal effort."
+      "title": "Add, Mix, Cook, Enjoy",
+      "titleJa": "A Simple Way to Cook with Care",
+      "subtitle": "To complete each recipe, you only need a few fresh ingredients — such as water, oil, eggs, or milk."
     },
     "steps": {
       "step1Tag": "SELECTION",
       "step1Title": "Choose Your Mix",
-      "step1TitleJa": "お好みのミックスを選ぶ",
-      "step1Body": "Select from our curated range of organic cakes, cookies, soups, and more.",
-      "step1BodyJa": "ケーキ、クッキー、スープなど、厳選されたオーガニック製品からお選びください。",
+      "step1TitleJa": "Choose the recipe you want to prepare",
+      "step1Body": "Select from èSenza’s prepared mixes, including cakes, cookies, bread, pizza, and soup.",
+      "step1BodyJa": "Each jar contains a base of organic ingredients, already measured and combined according to the recipe.",
       "step2Tag": "PREPARATION",
-      "step2Title": "Simple Preparation",
-      "step2TitleJa": "簡単な調理",
-      "step2Body": "Just add fresh wet ingredients like eggs, oil, or water to the mix.",
-      "step2BodyJa": "卵、油、水などの新鮮な液体材料を加えるだけ。",
+      "step2Title": "Add Fresh Ingredients",
+      "step2TitleJa": "Complete the recipe with a few fresh ingredients",
+      "step2Body": "Add what is needed — such as water, oil, eggs, milk, or butter — following the instructions included with the product.",
+      "step2BodyJa": "Each product includes clear step-by-step instructions to guide you through preparation.",
       "step3Tag": "ENJOYMENT",
-      "step3Title": "Taste of Italy",
-      "step3TitleJa": "本場イタリアの味",
-      "step3Body": "Enjoy healthy, organic, and delicious Italian flavors with your family and friends.",
-      "step3BodyJa": "ヘルシーでオーガニック、そして美味しいイタリアの味をお楽しみください。"
+      "step3Title": "Let the Recipe Come to Life",
+      "step3TitleJa": "Enjoy the pleasure of cooking",
+      "step3Body": "Add the ingredients, mix carefully, and let time do the rest.",
+      "step3BodyJa": "With just a few simple steps, cooking becomes once again a moment of attention, calm, and care."
     },
     "trust": {
-      "item1Title": "100% Organic",
-      "item1TitleJa": "100% オーガニック",
+      "item1Title": "Organic Ingredients",
+      "item1TitleJa": "Certified organic raw materials",
       "item2Title": "Made in Italy",
-      "item2TitleJa": "イタリア製",
-      "item3Title": "Eco Packaging",
-      "item3TitleJa": "エコパッケージ"
+      "item2TitleJa": "Italian recipes from small producers",
+      "item3Title": "Zero-Waste Approach",
+      "item3TitleJa": "Designed with sustainability in mind"
     },
     "shipping": {
-      "title": "Delivery to Your Door",
-      "subtitle": "Reliable, chilled shipping across all of Japan.",
-      "zonesTitle": "Shipping Zones",
-      "zonesTitleJa": "配送エリア",
-      "zone1Area": "Honshu & Shikoku",
-      "zone1Time": "1-2 Days",
-      "zone2Area": "Kyushu & Hokkaido",
-      "zone2Time": "2-3 Days",
-      "zone3Area": "Okinawa & Islands",
-      "zone3Time": "3-5 Days",
-      "tempTitle": "Temperature Control",
-      "tempTitleJa": "温度管理",
-      "tempBody": "Depending on the season and the mix content, we utilize Cool Ta-Q-Bin (クール宅急便) to ensure your products arrive fresh and perfectly preserved.",
+      "title": "From Italy to Your Kitchen",
+      "subtitle": "Prepared mixes designed to bring authentic Italian flavors abroad in a clear, simple, and transparent way.",
+      "zonesTitle": "Product Categories",
+      "zonesTitleJa": "Available Mixes",
+      "zone1Area": "Cakes & Muffins",
+      "zone1Time": "Soft, fragrant recipes",
+      "zone2Area": "Cookies & Shortbread",
+      "zone2Time": "Simple sweet moments",
+      "zone3Area": "Bread, Pizza & Soup",
+      "zone3Time": "Comforting savory recipes",
+      "tempTitle": "Preparation Guidance",
+      "tempTitleJa": "Clear Instructions",
+      "tempBody": "Each product includes clear step-by-step instructions. Add the ingredients, mix carefully, and let the recipe come to life with just a few simple steps.",
       "cta": "Start Your Journey"
     }
   },
   "shop": {
     "hero": {
-      "title": "Shop Our Mixes",
-      "titleJa": "商品一覧",
-      "subtitle": "Premium organic ingredients in a jar. Crafted in Italy, enjoyed in Japan.",
-      "subtitleJa": "瓶に詰まった、プレミアムオーガニック食材。"
+      "title": "Shop èSenza Mixes",
+      "titleJa": "Prepared Mixes from Italy",
+      "subtitle": "Jarred recipes made with certified organic ingredients, created to bring authentic Italian cooking into everyday life.",
+      "subtitleJa": "Simple, transparent, and high-quality products designed for international consumers."
     },
     "filters": {
       "all": "All",
-      "allJa": "全て",
+      "allJa": "All Mixes",
       "sweet": "Sweet",
-      "sweetJa": "甘い",
+      "sweetJa": "Cakes, muffins, cookies, and shortbread",
       "savory": "Savory",
-      "savoryJa": "お食事",
+      "savoryJa": "Bread, pizza, and soup",
       "vegan": "Vegan",
       "gf": "Gluten-Free"
     },
     "productCount": "{count} Products",
     "loadMore": "Load More Products",
     "newsletter": {
-      "title": "Join the èSenza Lifestyle",
-      "subtitle": "Get free recipes, exclusive discounts, and tips on sustainable living."
+      "title": "Join the èSenza Way",
+      "subtitle": "Discover recipes, small producers, seasonal choices, and a more conscious way of shopping."
     }
   },
   "product": {
@@ -158,23 +158,23 @@
     "addToCart": "Add to Cart",
     "subscribe": "Subscribe & Save 10%",
     "howToPrepare": "How to prepare",
-    "howToPrepareJa": "作り方",
+    "howToPrepareJa": "Step-by-step instructions",
     "ingredients": "Ingredients",
-    "sustainabilityTitle": "Plastic Free Packaging",
-    "sustainabilityBody": "Our jars are 100% glass with metal lids. Reuse them for your pantry or recycle them endlessly.",
+    "sustainabilityTitle": "Organic Ingredients and Responsible Packaging",
+    "sustainabilityBody": "Each jar contains a base of organic ingredients, already measured and combined according to èSenza’s recipe. The project follows a zero-waste approach rooted in transparency, clear supply chains, and environmental care.",
     "tabs": {
       "description": "Description",
       "nutrition": "Nutrition Facts",
       "reviews": "Reviews"
     },
-    "storageNote": "Store in a cool, dry place. Best consumed within 6 months of opening."
+    "storageNote": "Store in a cool, dry place. Follow the preparation instructions included with each product."
   },
   "footer": {
-    "tagline": "Organic mixes. Simple, sustainable, and straight from Italy.",
+    "tagline": "A conscious way of shopping, with Italian organic mixes made simple.",
     "shopTitle": "Shop",
-    "bestsellers": "Bestsellers",
+    "bestsellers": "Prepared Mixes",
     "vegan": "Vegan Mixes",
-    "sweets": "Sweets",
+    "sweets": "Sweet Mixes",
     "gifts": "Gift Sets",
     "companyTitle": "Company",
     "about": "About Us",
@@ -189,8 +189,8 @@
     "terms": "Terms of Service"
   },
   "newsletter": {
-    "title": "Join the Family",
-    "subtitle": "Get recipes, sustainability tips, and exclusive offers straight to your inbox.",
+    "title": "Join the èSenza Family",
+    "subtitle": "Get recipes, stories from small producers, sustainability ideas, and exclusive updates straight to your inbox.",
     "placeholder": "Your email address",
     "button": "Subscribe"
   },
