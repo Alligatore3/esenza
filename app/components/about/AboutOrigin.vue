@@ -1,7 +1,5 @@
 <script setup lang="ts">
 const { t } = useI18n()
-
-const regions = ['Tuscany', 'Emilia-Romagna', 'Sicily']
 </script>
 
 <template>
@@ -23,16 +21,6 @@ const regions = ['Tuscany', 'Emilia-Romagna', 'Sicily']
       <p class="text-text-muted dark:text-white/70 text-sm leading-relaxed mb-8">
         {{ t('about.origin.body') }}
       </p>
-
-      <div class="flex flex-wrap justify-center gap-3">
-        <span
-          v-for="region in regions"
-          :key="region"
-          class="px-4 py-2 rounded-full border border-border-soft dark:border-white/20 text-sm font-medium text-text-main dark:text-white/80"
-        >
-          {{ region }}
-        </span>
-      </div>
     </div>
   </section>
 </template>
