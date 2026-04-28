@@ -2,7 +2,7 @@
   "nav": {
     "shop": "ショップ",
     "about": "私たちについて",
-    "howItWorks": "使い方",
+    "howItWorks": "ご利用ガイド",
     "contact": "お問い合わせ",
     "journal": "ジャーナル",
     "search": "検索",
@@ -10,143 +10,143 @@
   },
   "home": {
     "hero": {
-      "badge": "新商品",
-      "title": "イタリアのオーガニックミックス。シンプルに、手作りを。",
-      "subtitle": "Italian Organic Mixes. Made Simple.",
-      "body": "トスカーナの本場の味をあなたのキッチンへ。プレミアムな瓶詰めミックスにオイルと水を加えるだけ。",
-      "cta": "ショップへ",
-      "ctaSecondary": "ブランドストーリー",
-      "floatingBadgeLine1": "プラスチックフリー",
-      "floatingBadgeLine2": "100% ガラス＆コルク"
+      "badge": "イタリアのオーガニックミックス",
+      "title": "プロジェクトはどこから始まるのか",
+      "subtitle": "スキオで生まれ、日本へ届ける、意識ある買い物のかたち。",
+      "body": "èSenzaは、ヴィチェンツァ県スキオで、量り売りの考え方とイタリアの小規模生産者のセレクションを組み合わせたプロジェクトとして始まりました。現在、そのプリミックスは、シンプルで本格的、そして持続可能なイタリアの食体験を皆さまのキッチンへ届けます。",
+      "cta": "今すぐ購入",
+      "ctaSecondary": "私たちのストーリー",
+      "floatingBadgeLine1": "ゼロウェイスト",
+      "floatingBadgeLine2": "オーガニック原材料"
     },
     "features": {
-      "title": "ゼロウェイスト。100%の美味しさ。",
-      "subtitle": "サステナブルで、美味しい。イタリアの厳選素材を日本のガラス瓶に詰め込みました。"
+      "title": "無駄なく。過剰なく。本物の味を。",
+      "subtitle": "透明性、明確なサプライチェーン、小規模生産者、そして環境への配慮を大切にしたセレクションです。"
     },
     "products": {
-      "title": "フィーチャードコレクション",
-      "subtitle": "あらゆるシーンに合わせたミックス",
-      "viewAll": "全商品を見る"
+      "title": "イタリア発のプリミックス",
+      "subtitle": "認証オーガニック原材料を使用した瓶入りレシピ。ご家庭で簡単に準備できるよう設計されています。",
+      "viewAll": "すべての商品を見る"
     }
   },
   "about": {
     "hero": {
-      "badge": "2023年創業",
-      "title": "瓶詰めの芸術",
-      "subtitle": "The Art of Jar Mixes",
-      "body": "イタリアのオーガニック農業の本場の味を、日本のキッチンへ。シンプルで、サステナブルで、純粋においしい。"
+      "badge": "2021年創業",
+      "title": "èSenzaのストーリー",
+      "subtitle": "品質、思いやり、意識ある選択を軸にしたファミリープロジェクト。",
+      "body": "èSenzaは2021年2月15日、オルネラのアイデアから始まりました。買う人にとって良く、作る人にとって公正で、環境にやさしい商品が並ぶ場所をつくりたいという想いからです。数か月後、マルティナがこのプロジェクトに加わり、世代をつなぐ強い絆、対話、そして日々の丁寧な積み重ねによって、ファミリービジネスへと育っていきました。"
     },
     "mission": {
-      "title": "廃棄物ゼロ、味は満点",
-      "titleJa": "Zero Waste, Full Taste",
-      "body": "私たちのミッションはシンプルです：風味を妥協することなくごみを減らすこと。すべての瓶は再利用、補充、または返却できるように設計されています。",
-      "feature1Title": "再利用可能な瓶",
-      "feature1Sub": "サステナブルなガラス素材",
-      "feature2Title": "カーボンニュートラル配送",
-      "feature2Sub": "全ての配送でオフセット"
+      "title": "人に良く、生産者に公正で、環境にやさしく",
+      "titleJa": "私たちのミッション",
+      "body": "このプロジェクトは、品質の追求、季節性への敬意、そして大規模小売では場所を得にくい小さな職人生産者を支えるという、共通の情熱を中心に発展してきました。èSenzaにとって、彼らの物語を伝えることは、商品を届けることと同じくらい大切です。",
+      "feature1Title": "責任あるセレクション",
+      "feature1Sub": "透明性、品質、明確なサプライチェーンを基準に選ばれた商品。",
+      "feature2Title": "ゼロウェイストの哲学",
+      "feature2Sub": "包装、廃棄、汚染、搾取を減らすための日々の取り組み。"
     },
     "origin": {
-      "title": "イタリア生まれ、日本育ち",
-      "titleJa": "Born in Italy, Loved in Japan",
-      "body": "すべての瓶は、トスカーナとエミリア＝ロマーニャの陽光あふれる農地から旅を始めます。そこでは、パートナー農家が代々の伝統を守りながら認証済みオーガニック食材を丁寧に育てています。"
+      "title": "私たちについて",
+      "titleJa": "創業者",
+      "body": "私たちはオルネラとマルティナ。èSenzaの中心にいる二人です。このプロジェクトは、小規模生産者、季節性、リフィル文化、そして意識ある選択を大切にする場所をつくりたいというオルネラの想いから始まりました。数か月後、マルティナが以前の仕事を離れて参加し、プロジェクトを信じ抜くことで、より広いビジョンを持つファミリービジネスへと形づくっていきました。"
     },
     "philosophy": {
-      "title": "私たちのこだわり",
-      "titleJa": "Our Philosophy",
-      "card1Title": "100%オーガニック",
-      "card1TitleJa": "100% Organic",
-      "card1Body": "農薬やGMOを使用しない認証済みオーガニック食材。",
-      "card2Title": "ヴィーガン対応",
-      "card2TitleJa": "Vegan Friendly",
-      "card2Body": "あなたの体と地球に優しい植物由来のレシピ。",
-      "card3Title": "手作業での梱包",
-      "card3TitleJa": "Hand-Packed",
-      "card3Body": "すべての瓶は精密さと丁寧さをもって手作業で詰められています。"
+      "title": "創業者とビジョン",
+      "titleJa": "オルネラとマルティナ",
+      "card1Title": "オルネラ",
+      "card1TitleJa": "創業者",
+      "card1Body": "シンプルな暮らし、自然、夜の読書、そして本物の商品への深い愛着を持つオルネラは、小規模生産者に価値を与え、より意識ある買い物の形を提案したいという想いからèSenzaを立ち上げました。",
+      "card2Title": "マルティナ",
+      "card2TitleJa": "共同創業者",
+      "card2Body": "マルティナは2021年5月にプロジェクトへ参加し、以前の仕事を離れて、あらゆる意味でパートナーとなる道を選びました。彼女の貢献によって、èSenzaは思いやり、対話、共有された責任を基盤とするファミリービジネスへと成長しました。",
+      "card3Title": "共通のビジョン",
+      "card3TitleJa": "意識ある未来へ",
+      "card3Body": "オルネラとマルティナは、èSenzaを、速さ、過剰さ、匿名的な消費よりも、品質、透明性、持続可能性、そして人と人との関係を大切にする場所であり続けさせたいと考えています。"
     },
     "quote": {
-      "text": "真の贅沢はシンプルさにあると私たちは信じています。食べ物がどこから来るか知ること、そしてそれが地球に害を与えていないと知ること。",
-      "author": "ジュリア＆ケンジ",
-      "role": "共同創業者、èSenza"
+      "text": "私たちは、自分たちの仕事を通じて、たとえ小さな形であっても、より意識的で、やさしく、敬意ある世界に貢献できると信じています。",
+      "author": "Ornella Trevisan & Martina Sartore",
+      "role": "Founders, èSenza"
     }
   },
   "howItWorks": {
     "hero": {
       "title": "ご利用ガイド",
-      "titleJa": "How It Works",
-      "subtitle": "本場イタリアのオーガニックミックスを、あなたのキッチンへお届けします。",
-      "subtitleJa": "Authentic Italian organic mixes delivered to your kitchen.",
-      "cta": "ショッピングを始める"
+      "titleJa": "ご家庭で楽しむシンプルなイタリアンレシピ",
+      "subtitle": "それぞれのミックスは、簡単に使えることと、料理する楽しさを残すことの両方を大切にして設計されています。",
+      "subtitleJa": "各瓶には、レシピに合わせてあらかじめ計量・配合されたオーガニック原材料が入っています。",
+      "cta": "はじめる"
     },
     "process": {
       "eyebrow": "プロセス",
-      "title": "イタリアをあなたに",
-      "titleJa": "Bringing Italy to You",
-      "subtitle": "シンプルな3ステップで、最高鮮度の食材を最小限の手間でお届けします。"
+      "title": "加えて、混ぜて、焼いて、楽しむ",
+      "titleJa": "丁寧に料理するためのシンプルな方法",
+      "subtitle": "各レシピを完成させるために必要なのは、水、油、卵、牛乳など、少しの新鮮な材料だけです。"
     },
     "steps": {
-      "step1Tag": "選択",
-      "step1Title": "お好みのミックスを選ぶ",
-      "step1TitleJa": "Choose Your Mix",
-      "step1Body": "ケーキ、クッキー、スープなど、厳選されたオーガニック製品からお選びください。",
-      "step1BodyJa": "Select from our curated range of organic cakes, cookies, soups, and more.",
-      "step2Tag": "調理",
-      "step2Title": "簡単な調理",
-      "step2TitleJa": "Simple Preparation",
-      "step2Body": "卵、油、水などの新鮮な液体材料を加えるだけ。",
-      "step2BodyJa": "Just add fresh wet ingredients like eggs, oil, or water to the mix.",
+      "step1Tag": "選ぶ",
+      "step1Title": "ミックスを選ぶ",
+      "step1TitleJa": "作りたいレシピを選ぶ",
+      "step1Body": "ケーキ、クッキー、パン、ピザ、スープなど、èSenzaのプリミックスからお選びください。",
+      "step1BodyJa": "各瓶には、レシピに合わせてあらかじめ計量・配合されたオーガニック原材料のベースが入っています。",
+      "step2Tag": "準備する",
+      "step2Title": "新鮮な材料を加える",
+      "step2TitleJa": "少しの新鮮な材料でレシピを完成させる",
+      "step2Body": "商品に同封された説明に従い、水、油、卵、牛乳、バターなど、必要な材料を加えます。",
+      "step2BodyJa": "各商品には、準備を分かりやすく進めるための手順説明が含まれています。",
       "step3Tag": "楽しむ",
-      "step3Title": "本場イタリアの味",
-      "step3TitleJa": "Taste of Italy",
-      "step3Body": "ヘルシーでオーガニック、そして美味しいイタリアの味をご家族や友人と楽しんでください。",
-      "step3BodyJa": "Enjoy healthy, organic, and delicious Italian flavors with your family and friends."
+      "step3Title": "レシピを完成させる",
+      "step3TitleJa": "料理する喜びを楽しむ",
+      "step3Body": "材料を加え、丁寧に混ぜ、あとは時間に任せます。",
+      "step3BodyJa": "ほんの数ステップで、料理は再び、注意深く、穏やかで、思いやりのある時間になります。"
     },
     "trust": {
-      "item1Title": "100% オーガニック",
-      "item1TitleJa": "100% Organic",
+      "item1Title": "オーガニック原材料",
+      "item1TitleJa": "認証オーガニック原材料",
       "item2Title": "イタリア製",
-      "item2TitleJa": "Made in Italy",
-      "item3Title": "エコパッケージ",
-      "item3TitleJa": "Eco Packaging"
+      "item2TitleJa": "小規模生産者によるイタリアのレシピ",
+      "item3Title": "ゼロウェイストの考え方",
+      "item3TitleJa": "持続可能性を意識した設計"
     },
     "shipping": {
-      "title": "玄関先までお届け",
-      "subtitle": "日本全国への信頼性の高い、チルド配送。",
-      "zonesTitle": "配送エリア",
-      "zonesTitleJa": "Shipping Zones",
-      "zone1Area": "本州・四国",
-      "zone1Time": "1〜2日",
-      "zone2Area": "九州・北海道",
-      "zone2Time": "2〜3日",
-      "zone3Area": "沖縄・離島",
-      "zone3Time": "3〜5日",
-      "tempTitle": "温度管理",
-      "tempTitleJa": "Temperature Control",
-      "tempBody": "季節や商品の内容に応じて、クール宅急便を利用し、商品が新鮮で完璧な状態でお届けできるよう努めています。",
-      "cta": "ショッピングを始める"
+      "title": "イタリアからあなたのキッチンへ",
+      "subtitle": "本格的なイタリアの味を、分かりやすく、シンプルで、透明性のある形で海外へ届けるために設計されたプリミックスです。",
+      "zonesTitle": "商品カテゴリー",
+      "zonesTitleJa": "取り扱いミックス",
+      "zone1Area": "ケーキ＆マフィン",
+      "zone1Time": "やわらかく香り豊かなレシピ",
+      "zone2Area": "クッキー＆ショートブレッド",
+      "zone2Time": "シンプルで甘いひととき",
+      "zone3Area": "パン、ピザ＆スープ",
+      "zone3Time": "心温まるセイボリーレシピ",
+      "tempTitle": "作り方のガイド",
+      "tempTitleJa": "分かりやすい説明",
+      "tempBody": "各商品には、分かりやすい手順説明が含まれています。材料を加え、丁寧に混ぜ、ほんの数ステップでレシピが形になります。",
+      "cta": "はじめる"
     }
   },
   "shop": {
     "hero": {
-      "title": "商品一覧",
-      "titleJa": "Shop Our Mixes",
-      "subtitle": "瓶に詰まった、プレミアムオーガニック食材。",
-      "subtitleJa": "Premium organic ingredients in a jar. Crafted in Italy, enjoyed in Japan."
+      "title": "èSenzaのミックスを購入する",
+      "titleJa": "イタリア発のプリミックス",
+      "subtitle": "認証オーガニック原材料を使用した瓶入りレシピ。本格的なイタリア料理を日常に取り入れるためにつくられました。",
+      "subtitleJa": "海外のお客様にも使いやすい、シンプルで透明性のある高品質な商品です。"
     },
     "filters": {
-      "all": "全て",
-      "allJa": "All",
-      "sweet": "甘い",
-      "sweetJa": "Sweet",
-      "savory": "お食事",
-      "savoryJa": "Savory",
+      "all": "すべて",
+      "allJa": "すべてのミックス",
+      "sweet": "スイート",
+      "sweetJa": "ケーキ、マフィン、クッキー、ショートブレッド",
+      "savory": "セイボリー",
+      "savoryJa": "パン、ピザ、スープ",
       "vegan": "ヴィーガン",
       "gf": "グルテンフリー"
     },
     "productCount": "{count} 商品",
-    "loadMore": "もっと見る",
+    "loadMore": "さらに商品を読み込む",
     "newsletter": {
-      "title": "èSenzaライフスタイルに参加",
-      "subtitle": "無料レシピ、限定割引、サステナブルな暮らしのヒントをお届けします。"
+      "title": "èSenzaのある暮らしへ",
+      "subtitle": "レシピ、小規模生産者の物語、季節の選択、そしてより意識ある買い物の形をお届けします。"
     }
   },
   "product": {
@@ -158,23 +158,23 @@
     "addToCart": "カートに追加",
     "subscribe": "定期購入で10%オフ",
     "howToPrepare": "作り方",
-    "howToPrepareJa": "How to prepare",
+    "howToPrepareJa": "ステップごとの説明",
     "ingredients": "原材料",
-    "sustainabilityTitle": "プラスチックフリーパッケージ",
-    "sustainabilityBody": "瓶は100%ガラス製、金属蓋付き。食品庫の保存容器として再利用したり、エンドレスにリサイクルできます。",
+    "sustainabilityTitle": "オーガニック原材料と責任ある包装",
+    "sustainabilityBody": "各瓶には、èSenzaのレシピに合わせてあらかじめ計量・配合されたオーガニック原材料のベースが入っています。このプロジェクトは、透明性、明確なサプライチェーン、環境への配慮に根ざしたゼロウェイストの考え方に基づいています。",
     "tabs": {
-      "description": "説明",
-      "nutrition": "栄養成分表",
+      "description": "商品説明",
+      "nutrition": "栄養成分表示",
       "reviews": "レビュー"
     },
-    "storageNote": "冷暗所で保存してください。開封後は6ヶ月以内にお召し上がりください。"
+    "storageNote": "直射日光、高温多湿を避け、涼しく乾燥した場所で保管してください。各商品に同封された作り方に従ってください。"
   },
   "footer": {
-    "tagline": "オーガニックミックス。シンプルで、サステナブルで、イタリア直送。",
+    "tagline": "意識ある買い物を、シンプルなイタリアのオーガニックミックスで。",
     "shopTitle": "ショップ",
-    "bestsellers": "ベストセラー",
+    "bestsellers": "プリミックス",
     "vegan": "ヴィーガンミックス",
-    "sweets": "スイーツ",
+    "sweets": "スイートミックス",
     "gifts": "ギフトセット",
     "companyTitle": "会社情報",
     "about": "私たちについて",
@@ -184,20 +184,20 @@
     "newsletterTitle": "ニュースレター",
     "newsletterPlaceholder": "メールアドレス",
     "newsletterButton": "登録",
-    "copyright": "© 2024 èSenza Japan. 無断転載禁止。",
+    "copyright": "© 2024 èSenza Japan. All rights reserved.",
     "privacy": "プライバシーポリシー",
     "terms": "利用規約"
   },
   "newsletter": {
-    "title": "ファミリーに参加",
-    "subtitle": "レシピ、サステナビリティのヒント、限定オファーをお届けします。",
+    "title": "èSenzaファミリーへようこそ",
+    "subtitle": "レシピ、小規模生産者の物語、サステナビリティのアイデア、限定情報をメールでお届けします。",
     "placeholder": "メールアドレス",
-    "button": "登録"
+    "button": "登録する"
   },
   "common": {
-    "viewAll": "全て見る",
-    "loadMore": "もっと見る",
-    "backToShop": "ショップに戻る",
+    "viewAll": "すべて見る",
+    "loadMore": "さらに読み込む",
+    "backToShop": "ショップへ戻る",
     "addToCart": "カートに追加",
     "yen": "¥"
   }
