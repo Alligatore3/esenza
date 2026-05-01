@@ -1,64 +1,69 @@
-import { products as staticProducts } from '~/data/products'
 import type { Product, PrepStep } from '~/types/product'
 
 // DatoCMS GraphQL query — fetches all locales in one request.
 // Field names match the DatoCMS model described in the project plan.
 // Run this in the DatoCMS GraphQL playground to verify: https://cda-explorer.datocms.com/
+// Minimal model: title, description, image.
+// Slug is derived from the title (kebab-case) since the model has no slug field yet.
 const PRODUCTS_QUERY = `
   query AllProducts {
     allProducts(orderBy: _createdAt_ASC, first: 100) {
-      slug
-      price
-      badge
-      badgeColor
-      category
-      isVegan
-      isGlutenFree
-      featured
-      tags
+      id
+      title
+      description { value }
       image { url alt }
-      gallery { url alt }
-      _allNameLocales { locale value }
-      _allShortDescriptionLocales { locale value }
-      _allDescriptionLocales { locale value }
-      prepSteps {
-        icon
-        _allLabelLocales { locale value }
-      }
     }
   }
 `
+
+const slugify = (s: string): string =>
+  s.toLowerCase().trim()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+
+// Extracts plain text from a DatoCMS Structured Text DAST node.
+// DAST = { schema, document: { type: 'root', children: [...] } } — children may be
+// paragraphs, headings, lists, etc., each with nested children whose leaf nodes have `value`.
+const dastToPlainText = (dast: unknown): string => {
+  if (!dast || typeof dast !== 'object') return ''
+  const node = dast as Record<string, any>
+  if (typeof node.value === 'string') return node.value
+  const children = node.document?.children ?? node.children
+  if (!Array.isArray(children)) return ''
+  return children.map(dastToPlainText).join(' ').replace(/\s+/g, ' ').trim()
+}
 
 type LocaleValue = { locale: string; value: string }
 
 const localeVal = (arr: LocaleValue[] | undefined, lang: string): string =>
   arr?.find((l) => l.locale === lang)?.value ?? ''
 
-const mapProduct = (raw: Record<string, any>): Product => ({
-  slug: raw.slug,
-  name: localeVal(raw._allNameLocales, 'en'),
-  nameJa: localeVal(raw._allNameLocales, 'ja'),
-  price: raw.price,
-  image: raw.image?.url ?? '',
-  images: raw.gallery?.map((g: { url: string }) => g.url) ?? [],
-  imageAlt: raw.image?.alt ?? '',
-  badge: raw.badge ?? null,
-  badgeColor: raw.badgeColor ?? null,
-  shortDescription: localeVal(raw._allShortDescriptionLocales, 'en'),
-  shortDescriptionJa: localeVal(raw._allShortDescriptionLocales, 'ja'),
-  description: localeVal(raw._allDescriptionLocales, 'en'),
-  descriptionJa: localeVal(raw._allDescriptionLocales, 'ja'),
-  tags: raw.tags ?? [],
-  category: raw.category,
-  isVegan: raw.isVegan,
-  isGlutenFree: raw.isGlutenFree,
-  featured: raw.featured,
-  prepSteps: raw.prepSteps?.map((s: Record<string, any>): PrepStep => ({
-    icon: s.icon,
-    label: localeVal(s._allLabelLocales, 'en'),
-    labelJa: localeVal(s._allLabelLocales, 'ja'),
-  })) ?? [],
-})
+const mapProduct = (raw: Record<string, any>): Product => {
+  const title = raw.title ?? ''
+  const description = dastToPlainText(raw.description?.value)
+  return {
+    slug: slugify(title) || raw.id,
+    name: title,
+    nameJa: title,
+    price: 0,
+    image: raw.image?.url ?? '',
+    images: raw.image?.url ? [raw.image.url] : [],
+    imageAlt: raw.image?.alt ?? title,
+    badge: null,
+    badgeColor: null,
+    shortDescription: description,
+    shortDescriptionJa: description,
+    description,
+    descriptionJa: description,
+    tags: [],
+    category: 'savory',
+    isVegan: false,
+    isGlutenFree: false,
+    featured: true,
+    prepSteps: [] as PrepStep[],
+  }
+}
 
 export const useProducts = () => {
   const { public: { datocmsToken } } = useRuntimeConfig()
@@ -66,26 +71,34 @@ export const useProducts = () => {
   // When no token is set (local dev without DatoCMS), static data is used.
   // Once NUXT_PUBLIC_DATOCMS_TOKEN is set, data is fetched from DatoCMS.
   const { data: products } = useAsyncData<Product[]>('products', async () => {
-    if (!datocmsToken) return staticProducts as Product[]
+    if (!datocmsToken) return [] as Product[]
 
     try {
-      const res = await $fetch<{ data: { allProducts: Record<string, any>[] } }>(
-        'https://graphql.datocms.com/',
-        {
-          method: 'POST',
-          headers: {
-            Authorization: `Bearer ${datocmsToken}`,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ query: PRODUCTS_QUERY }),
+      const res = await $fetch<{
+        data?: { allProducts: Record<string, any>[] }
+        errors?: { message: string; extensions?: unknown }[]
+      }>('https://graphql.datocms.com/', {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${datocmsToken}`,
+          'Content-Type': 'application/json',
         },
-      )
+        body: JSON.stringify({ query: PRODUCTS_QUERY }),
+      })
+      if (res.errors?.length) {
+        console.warn('[useProducts] DatoCMS GraphQL errors:', JSON.stringify(res.errors, null, 2))
+        return [] as Product[]
+      }
+      if (!res.data?.allProducts) {
+        console.warn('[useProducts] DatoCMS unexpected response shape:', JSON.stringify(res, null, 2))
+        return [] as Product[]
+      }
       return res.data.allProducts.map(mapProduct)
     } catch (err) {
       console.warn('[useProducts] DatoCMS fetch failed, falling back to static data:', err)
-      return staticProducts as Product[]
+      return [] as Product[]
     }
-  }, { default: () => staticProducts as Product[] })
+  }, { default: () => [] as Product[] })
 
   const getAll = (): Product[] => products.value ?? []
 
