@@ -28,14 +28,13 @@ export default defineNuxtConfig({
   },
 
   i18n: {
+    strategy: 'prefix_except_default',
+    defaultLocale: 'en',
+    langDir: 'locales/',
     locales: [
       { code: 'en', language: 'en-US', file: 'en.json', name: 'English' },
       { code: 'ja', language: 'ja-JP', file: 'ja.json', name: '日本語' },
     ],
-    defaultLocale: 'en',
-    lazy: true,
-    langDir: 'locales/',
-    strategy: 'prefix_except_default',
   },
 
   app: {
