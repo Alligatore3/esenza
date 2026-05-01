@@ -6,8 +6,8 @@ const { t } = useI18n()
   <section class="w-full relative min-h-[360px] flex items-end overflow-hidden">
     <div
       class="absolute inset-0 bg-cover bg-center"
-      style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCqq7jfbg8RG0U85tVEjcu8EyQ43KXUnM0zqifg_F9vk9kKmy1k4AWY48oU3wk6eTxTz0LaczwexC4n9RSPjt_prjD-LDzx4AJGxEC4H5CPwuVSGRgm8pl94TmVoXfCA7q1s-UWbNY_QOq354yxHhajN1jv87eawpGm2nA-uXKwnHss8JiF2YCgUFTL5lHcfcX4f96uRHgS1-wzbXaB82a5zngeFy65pvTAcMypKo4a79uJUqhx9VUs5QleHZcREMpkugqCbghSZ1g')"
-    ></div>
+      style="background-image: url('/images/shop.jpeg')"
+    />
     <div class="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-background-dark/50 to-transparent"></div>
 
     <div class="relative z-10 w-full max-w-wide mx-auto px-4 md:px-10 lg:px-16 pb-12 pt-28">
