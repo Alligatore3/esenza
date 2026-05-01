@@ -2,26 +2,30 @@
 const { t } = useI18n()
 const localePath = useLocalePath()
 const route = useRoute()
-const { getBySlug } = useProducts()
+const { products, getBySlug } = useProducts()
 
 const slug = route.params.slug as string
-const product = getBySlug(slug)
+const product = computed(() => getBySlug(slug))
 
-if (!product) {
-  throw createError({ statusCode: 404, statusMessage: 'Product not found' })
-}
+// Throw 404 only once products have actually loaded — otherwise we'd 404
+// on the initial synchronous render before useAsyncData resolves.
+watchEffect(() => {
+  if (products.value && products.value.length > 0 && !product.value) {
+    throw createError({ statusCode: 404, statusMessage: 'Product not found' })
+  }
+})
 
 const activeImage = ref(0)
 
 useSeoMeta({
-  title: `${product.name} — èSenza Japan`,
-  description: product.description,
+  title: () => product.value ? `${product.value.name} — èSenza Japan` : 'èSenza Japan',
+  description: () => product.value?.description ?? '',
 })
 </script>
 
 <template>
   <div class="w-full bg-background-light dark:bg-background-dark min-h-screen">
-    <div class="max-w-wide mx-auto px-4 md:px-10 lg:px-16 py-6">
+    <div v-if="product" class="max-w-wide mx-auto px-4 md:px-10 lg:px-16 py-6">
       <!-- Breadcrumb -->
       <nav class="flex items-center gap-2 text-sm mb-8">
         <NuxtLink :to="localePath('/')" class="text-text-muted dark:text-white/50 hover:text-primary transition-colors">

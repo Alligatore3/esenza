@@ -2,7 +2,7 @@
 const { t } = useI18n()
 const localePath = useLocalePath()
 const { getFeatured } = useProducts()
-const featured = getFeatured(6)
+const featured = computed(() => getFeatured(6))
 </script>
 
 <template>
