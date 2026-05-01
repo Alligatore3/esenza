@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import type { Product } from '~/data/products'
+import type { Product } from '~/types/product'
 
 const props = defineProps<{
   product: Product
   variant?: 'simple' | 'full'
 }>()
 
-const emit = defineEmits<{ 'add-to-cart': [slug: string] }>()
 const localePath = useLocalePath()
+const cart = useCartStore()
 
 const badgeClass = computed(() => {
   if (props.product.badgeColor === 'yellow') return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-300'
@@ -47,7 +47,7 @@ const formattedPrice = computed(() => `¥${props.product.price.toLocaleString()}
                text-sm font-semibold rounded-xl
                opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0
                transition-all duration-300"
-        @click.prevent="emit('add-to-cart', product.slug)"
+        @click.prevent="cart.add(product)"
       >
         <span class="material-symbols-outlined text-[18px] align-middle mr-1">add_shopping_cart</span>
         Add to Cart

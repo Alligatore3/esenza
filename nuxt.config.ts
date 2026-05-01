@@ -7,7 +7,17 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
     '@nuxtjs/i18n',
+    '@pinia/nuxt',
   ],
+
+  runtimeConfig: {
+    stripeSecretKey: '',
+    stripeWebhookSecret: '',
+    public: {
+      datocmsToken: '',
+      stripePublishableKey: '',
+    },
+  },
 
   components: [
     { path: '~/components/App', pathPrefix: false },

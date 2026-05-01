@@ -196,7 +196,33 @@
     "viewAll": "すべて見る",
     "loadMore": "さらに読み込む",
     "backToShop": "ショップへ戻る",
+    "backToHome": "ホームへ戻る",
     "addToCart": "カートに追加",
     "yen": "¥"
+  },
+  "cart": {
+    "title": "カート",
+    "empty": "カートは空です",
+    "orderSummary": "注文概要",
+    "subtotal": "小計",
+    "shipping": "送料",
+    "shippingCalc": "チェックアウト時に計算",
+    "total": "合計",
+    "checkout": "チェックアウトへ進む",
+    "processing": "処理中…",
+    "continueShopping": "買い物を続ける",
+    "backToCart": "カートへ戻る",
+    "secureNote": "Stripeによる安全な決済",
+    "checkoutError": "エラーが発生しました。もう一度お試しください。"
+  },
+  "checkout": {
+    "success": {
+      "title": "ご注文が確定しました！",
+      "message": "ご注文ありがとうございます。まもなく確認メールをお送りします。丁寧にオーガニックイタリアミックスをご用意いたします。"
+    },
+    "cancel": {
+      "title": "支払いがキャンセルされました",
+      "message": "注文は完了していません。カートはまだ保存されています。準備ができたらいつでも戻ってお試しください。"
+    }
   }
 }

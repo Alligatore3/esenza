@@ -196,7 +196,33 @@
     "viewAll": "View All",
     "loadMore": "Load More",
     "backToShop": "Back to Shop",
+    "backToHome": "Back to Home",
     "addToCart": "Add to Cart",
     "yen": "¥"
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "orderSummary": "Order Summary",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "shippingCalc": "Calculated at checkout",
+    "total": "Total",
+    "checkout": "Proceed to Checkout",
+    "processing": "Processing…",
+    "continueShopping": "Continue Shopping",
+    "backToCart": "Back to Cart",
+    "secureNote": "Secure checkout powered by Stripe",
+    "checkoutError": "Something went wrong. Please try again."
+  },
+  "checkout": {
+    "success": {
+      "title": "Order Confirmed!",
+      "message": "Thank you for your order. You will receive a confirmation email shortly. We'll prepare your organic Italian mixes with care."
+    },
+    "cancel": {
+      "title": "Payment Cancelled",
+      "message": "Your order was not completed. Your cart is still saved — you can go back and try again whenever you're ready."
+    }
   }
 }
