@@ -18,7 +18,6 @@ export interface Product {
   shortDescriptionJa: string
   description: string
   descriptionJa: string
-  ingredients: string[]
   tags: string[]
   category: 'sweet' | 'savory' | 'breakfast'
   isVegan: boolean
@@ -48,7 +47,6 @@ export const products: Product[] = [
     shortDescriptionJa: 'レンズ豆とクルミベース',
     description: 'A hearty blend of organic lentils, sun-dried tomatoes, and Italian herbs. Just add water and olive oil to create rich, savory patties packed with plant protein.',
     descriptionJa: '有機レンズ豆、セミドライトマト、イタリアンハーブのブレンド。水とオリーブオイルを加えるだけで、植物性タンパク質たっぷりのパティが完成します。',
-    ingredients: ['Organic Lentils', 'Oat Flour', 'Sun-dried Tomato', 'Onion Powder', 'Sea Salt', 'Oregano'],
     tags: ['Savory', 'Protein'],
     category: 'savory',
     isVegan: true,
@@ -74,7 +72,6 @@ export const products: Product[] = [
     shortDescriptionJa: '豆とハーブのスープ',
     description: 'Warm, hearty Tuscan bean soup with heritage cannellini beans, sun-dried tomatoes, and rosemary.',
     descriptionJa: 'カンネリーニ豆、セミドライトマト、ローズマリーが織りなす本場トスカーナのスープ。',
-    ingredients: ['Cannellini Beans', 'Sun-dried Tomato', 'Rosemary', 'Sea Salt', 'Black Pepper'],
     tags: ['Savory', 'Lunch'],
     category: 'savory',
     isVegan: true,
@@ -100,7 +97,6 @@ export const products: Product[] = [
     shortDescriptionJa: 'ダークチョコチャンク',
     description: 'Organic spelt flour, raw cane sugar, and generous chunks of dark Sicilian chocolate.',
     descriptionJa: 'スペルト小麦粉、生のキビ砂糖、シチリア産ダークチョコレートのかけら。',
-    ingredients: ['Spelt Flour', 'Raw Cane Sugar', 'Dark Chocolate Chunks', 'Sea Salt', 'Bicarbonate'],
     tags: ['Sweet', 'Kids'],
     category: 'sweet',
     isVegan: true,
@@ -126,7 +122,6 @@ export const products: Product[] = [
     shortDescriptionJa: 'セミドライトマト',
     description: 'Durum wheat pasta blended with sun-dried tomatoes, basil, and garlic.',
     descriptionJa: 'デュラム小麦パスタ、セミドライトマト、バジル、ガーリック入り。',
-    ingredients: ['Durum Wheat Pasta', 'Sun-dried Tomato', 'Basil', 'Garlic', 'Sea Salt'],
     tags: ['Savory', 'Dinner'],
     category: 'savory',
     isVegan: true,
@@ -152,7 +147,6 @@ export const products: Product[] = [
     shortDescriptionJa: 'アマルフィレモン',
     description: 'Bright, citrusy sponge cake made with organic Amalfi lemon zest and rice flour.',
     descriptionJa: 'アマルフィ産有機レモンの皮と米粉を使った爽やかなスポンジケーキ。',
-    ingredients: ['Rice Flour', 'Raw Cane Sugar', 'Amalfi Lemon Zest', 'Baking Powder', 'Sea Salt'],
     tags: ['Sweet'],
     category: 'sweet',
     isVegan: true,
@@ -178,7 +172,6 @@ export const products: Product[] = [
     shortDescriptionJa: 'オーツ、ナッツ＆ハチミツ',
     description: 'Rolled oats, mixed nuts, and Italian wildflower honey granules. Just add milk or yogurt.',
     descriptionJa: 'ロールドオーツ、ミックスナッツ、イタリア産野生花のはちみつ。牛乳やヨーグルトを加えるだけ。',
-    ingredients: ['Rolled Oats', 'Mixed Nuts', 'Wildflower Honey', 'Chia Seeds', 'Cinnamon'],
     tags: ['Sweet', 'Breakfast'],
     category: 'breakfast',
     isVegan: false,
@@ -204,7 +197,6 @@ export const products: Product[] = [
     shortDescriptionJa: 'リッチカカオとスペルト',
     description: 'Rich cocoa powder layered with organic cane sugar and spelt flour. Just add oil and water.',
     descriptionJa: 'リッチなカカオパウダー、有機サトウキビ、スペルト小麦粉の組み合わせ。',
-    ingredients: ['Spelt Flour', 'Cocoa Powder', 'Cane Sugar', 'Baking Soda', 'Sea Salt'],
     tags: ['Sweet', 'Rich Cocoa'],
     category: 'sweet',
     isVegan: true,
@@ -230,7 +222,6 @@ export const products: Product[] = [
     shortDescriptionJa: 'デュラム小麦とハーブ',
     description: 'Hearty durum wheat pasta with sun-dried tomatoes, oregano, and basil.',
     descriptionJa: 'デュラム小麦パスタ、セミドライトマト、オレガノとバジル。',
-    ingredients: ['Durum Wheat Pasta', 'Sun-dried Tomato', 'Oregano', 'Basil', 'Sea Salt'],
     tags: ['Savory', 'Lunch'],
     category: 'savory',
     isVegan: true,
@@ -255,7 +246,6 @@ export const products: Product[] = [
     shortDescriptionJa: 'アルボリオとポルチーニ',
     description: 'Authentic Arborio rice mixed with dried porcini mushrooms and truffle salt.',
     descriptionJa: '本格アルボリオ米、乾燥ポルチーニ、トリュフ塩の黄金コンビ。',
-    ingredients: ['Arborio Rice', 'Dried Porcini', 'Truffle Salt', 'Dried Shallot', 'Thyme'],
     tags: ['Savory', 'Gluten-Free', 'Dinner'],
     category: 'savory',
     isVegan: true,
@@ -280,7 +270,6 @@ export const products: Product[] = [
     shortDescriptionJa: 'オーツとクランベリー',
     description: 'Chewy oats, sweet dried cranberries, and a hint of cinnamon.',
     descriptionJa: 'もちもちオーツ、甘酸っぱいドライクランベリー、シナモンのアクセント。',
-    ingredients: ['Rolled Oats', 'Dried Cranberries', 'Cinnamon', 'Coconut Sugar', 'Sea Salt'],
     tags: ['Sweet', 'Kids'],
     category: 'sweet',
     isVegan: true,
@@ -306,7 +295,6 @@ export const products: Product[] = [
     shortDescriptionJa: 'レッドレンティルとスモークパプリカ',
     description: 'A savory blend of red lentils, oats, and smoked paprika for perfect veggie patties.',
     descriptionJa: 'レッドレンズ豆、オーツ、スモークパプリカが作る理想的なベジパティ。',
-    ingredients: ['Red Lentils', 'Oats', 'Smoked Paprika', 'Cumin', 'Sea Salt'],
     tags: ['Savory', 'Protein'],
     category: 'savory',
     isVegan: true,
@@ -332,7 +320,6 @@ export const products: Product[] = [
     shortDescriptionJa: 'スペルトとブルーベリー',
     description: 'Ancient grain spelt flour with freeze-dried blueberries. Fluffy and nutty.',
     descriptionJa: 'フリーズドライブルーベリー入り古代穀物スペルト小麦のパンケーキ。',
-    ingredients: ['Spelt Flour', 'Freeze-dried Blueberry', 'Coconut Sugar', 'Baking Powder', 'Vanilla'],
     tags: ['Sweet', 'Breakfast'],
     category: 'breakfast',
     isVegan: true,

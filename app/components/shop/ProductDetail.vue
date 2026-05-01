@@ -1,16 +1,19 @@
 <script setup lang="ts">
 import type { Product } from '~/data/products'
 
-const props = defineProps<{ product: Product }>()
 const { t } = useI18n()
 
+const props = defineProps<{ product: Product }>()
+
 const quantity = ref(1)
+
 const activeTab = ref<'description' | 'nutrition' | 'reviews'>('description')
 
 const formattedPrice = computed(() => `¥${props.product.price.toLocaleString()}`)
 
-function increment() { quantity.value++ }
-function decrement() { if (quantity.value > 1) quantity.value-- }
+const increment = () => { quantity.value++ }
+
+const decrement = () => { if (quantity.value > 1) quantity.value-- }
 </script>
 
 <template>
@@ -61,13 +64,6 @@ function decrement() { if (quantity.value > 1) quantity.value-- }
         <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
         {{ t('product.addToCart') }}
       </button>
-
-      <!-- Subscribe -->
-      <button
-        class="w-full py-3 border-2 border-border-soft dark:border-white/20 text-text-main dark:text-white font-medium text-sm rounded-xl hover:border-primary hover:text-primary transition-all duration-200"
-      >
-        {{ t('product.subscribe') }}
-      </button>
     </div>
 
     <!-- How to prepare -->
@@ -89,20 +85,6 @@ function decrement() { if (quantity.value > 1) quantity.value-- }
             class="flex-1 h-px border-t-2 border-dashed border-border-soft dark:border-white/20 mb-8"
           ></div>
         </template>
-      </div>
-    </div>
-
-    <!-- Ingredients -->
-    <div>
-      <p class="text-sm font-semibold text-text-main dark:text-white mb-3">{{ t('product.ingredients') }}</p>
-      <div class="flex flex-wrap gap-2">
-        <span
-          v-for="ing in product.ingredients"
-          :key="ing"
-          class="text-xs px-3 py-1.5 rounded-full bg-background-light dark:bg-surface-dark border border-border-soft dark:border-white/10 text-text-muted dark:text-white/70"
-        >
-          {{ ing }}
-        </span>
       </div>
     </div>
 
