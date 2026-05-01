@@ -7,7 +7,7 @@ const localePath = useLocalePath()
   <section class="w-full relative min-h-[420px] flex items-end overflow-hidden">
     <div
       class="absolute inset-0 bg-cover bg-center"
-      style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuABkr1hP9BBh2Yk18RT6iqHZzZhbQIvQ9sq9rnsPao_6lgIFN39WAm6XJ1vhovGSzyoe8Hl1NXYBQN7TX-vcX6qnQmUXNPZPKnObftmtBrarL90YgoBRCvJIepDxdOeDKC_z70f1tCYxSUeY2DA4DZX80wVfg8ZZKO84GrexGbaxQVlqLQIEeUWyI0k2wQ_UDBROCowpF7dOJ_ZTMd5P3g88OfuDRYrQv8-IKrKc1msQ3DGATjMp3pdW-i4nkUyas2k8OISd55qWgE')"
+      style="background-image: url('/images/how-works.jpeg')"
     ></div>
     <div class="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-background-dark/50 to-transparent"></div>
 

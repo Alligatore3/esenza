@@ -8,7 +8,7 @@ const { t } = useI18n()
       <!-- Image -->
       <div class="rounded-2xl overflow-hidden aspect-[4/3]">
         <img
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuC29mBe5LSTuUu0o_f45xVWArPL03cO2lzVioRHC6rtBL-2JBduLOLfadzQN6iI0rxkx9puw8q_a60C3CFRtiJMqUemCaW3TQM0P6vUhyJE9pEbtTNBAQJN9q1wC4ide0Iu5uZad4Zev-ti3HrnvzDDKw-B6UKIy8lDF6ajP-1xo6wh_ukzh_XumbO7f29uXnVYVD62Sblvi7IqvCRTWGKY7_9NfCEHRWVF0asjW_Gc4BrdSy3zbqAdrxmrQzrW4uVsFW4yW4ifiwk"
+          src="/images/about.jpeg"
           alt="Hands packing jar with organic ingredients"
           class="w-full h-full object-cover"
         />

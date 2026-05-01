@@ -7,8 +7,9 @@ const { t } = useI18n()
     <!-- Background -->
     <div
       class="absolute inset-0 bg-cover bg-center"
-      style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB3ziHy-OG3MrV3w__gyx27dBIvquq9pRckq0ulWZnkQtwrv0YKyxydtWOHTjirtkSHQugrQshvkfKHrkqugYi3M847_8lUeNVP2j8vmhsKjEtnitKyt3xnX8XqMePev7DBHxI4pxJ2dgsg13DcWuHcC88iBDf_bJK7Niv1-ALCfbMfkJeUO6A1Uq272m22ngbA9FCRbHSbMnI-ICoZVAj4_XJIYkLoqG2IPpvno9nGH_exesTLtHT_cyZwDDJurUdBpDZGcqEymak')"
-    ></div>
+      style="background-image: url('/images/about-hero.jpeg')"
+    />
+
     <div class="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-background-dark/50 to-transparent"></div>
 
     <!-- Content -->

@@ -45,9 +45,9 @@ const localePath = useLocalePath()
       <div class="flex-1 relative w-full max-w-lg">
         <div class="rounded-3xl overflow-hidden aspect-[4/3] lg:aspect-[4/5] shadow-2xl">
           <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1TNmwvwX0TZz8NbORZvdYpdxnTux3gc0L9AL-yqT2FR7Xm9pvoMb-U43Ty_GU89Q53RoAtUYaisV6i7XJTCT1DoMAHHx4BL50pBOJ4DTBn4usWaBvh8C6Wfyo9AhpIfIhiM-VTZadUgDw35KW3BePUkyTNM5sHeJmKKvBI5e0NH5gA_0qiaBhNEeq543M6P7d6I2HcOfyuchbGzSiWXu_8ItWqoi_OpWnzievyyu3f8rguq7hTUmc_9mVX8-8NfZgvCZ8LpNgwjs"
             alt="Glass jar with organic mix on a wooden table"
             class="w-full h-full object-cover"
+            src="/images/home.jpeg"
           />
         </div>
         <!-- Floating badge -->
