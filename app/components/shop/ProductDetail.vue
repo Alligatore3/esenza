@@ -100,25 +100,10 @@ const addToCart = () => cart.add(props.product, quantity.value)
       </p>
 
       <div class="flex items-center gap-0">
-        <template v-for="(step, i) in product.prepSteps" :key="step.icon">
-          <div class="flex flex-col items-center gap-2 flex-1">
-            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-              <span class="material-symbols-outlined text-primary text-[20px]">{{
-                step.icon
-              }}</span>
-            </div>
-            <span class="text-xs font-medium text-text-main dark:text-white text-center">{{
-              step.label
-            }}</span>
-            <span class="text-xs text-text-muted dark:text-white/50 text-center">{{
-              step.labelJa
-            }}</span>
-          </div>
-          <div
-            v-if="i < product.prepSteps.length - 1"
-            class="flex-1 h-px border-t-2 border-dashed border-border-soft dark:border-white/20 mb-8"
-          ></div>
-        </template>
+        <div
+          class="text-sm text-text-muted dark:text-white/70 leading-relaxed"
+          v-html="product.howToPrepare"
+        />
       </div>
     </div>
 

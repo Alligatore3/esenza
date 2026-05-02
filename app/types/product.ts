@@ -1,9 +1,3 @@
-export interface PrepStep {
-  icon: string
-  label: string
-  labelJa: string
-}
-
 export interface Product {
   slug: string
   name: string
@@ -17,11 +11,12 @@ export interface Product {
   shortDescription: string
   shortDescriptionJa: string
   description: string
+  howToPrepare: string
+  tips: string
   descriptionJa: string
   tags: string[]
   category: 'sweet' | 'savory' | 'breakfast'
   isVegan: boolean
   isGlutenFree: boolean
   featured: boolean
-  prepSteps: PrepStep[]
 }

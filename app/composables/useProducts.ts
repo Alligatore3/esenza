@@ -1,4 +1,4 @@
-import type { Product, PrepStep } from '~/types/product'
+import type { Product } from '~/types/product'
 
 const DEFAULT_EMPTY_PRODUCTS: Product[] = []
 
@@ -14,6 +14,8 @@ const PRODUCTS_QUERY = `
       title
       subtitle
       description { value }
+      howtoprepare { value }
+      tips { value }
       image { url alt }
     }
   }
@@ -80,8 +82,11 @@ const renderNode = (node: DastNode): string => {
   if (!node || typeof node !== 'object') return ''
 
   // Leaf text node — span (or untyped node carrying a value).
+  // Convert literal newlines inside a span to <br> so soft line breaks
+  // authored in DatoCMS render visibly inside their parent block.
   if (typeof node.value === 'string' && (!node.type || node.type === 'span')) {
-    return wrapMarks(escapeHtml(node.value), node.marks)
+    const html = escapeHtml(node.value).replace(/\r?\n/g, '<br>')
+    return wrapMarks(html, node.marks)
   }
 
   switch (node.type) {
@@ -125,11 +130,15 @@ const mapProduct = (raw: Record<string, any>): Product => {
   const title = raw.title ?? ''
   const subTitle = raw.subtitle ?? ''
   const description = dastToHtml(raw.description?.value)
+  const howToPrepare = dastToHtml(raw.howtoprepare?.value)
+  const tips = dastToHtml(raw.tips?.value)
 
   return {
     slug: slugify(title) || raw.id,
     name: title,
     subTitle,
+    howToPrepare,
+    tips,
     price: 0,
     image: raw.image?.url ?? '',
     images: raw.image?.url ? [raw.image.url] : [],
@@ -145,7 +154,6 @@ const mapProduct = (raw: Record<string, any>): Product => {
     isVegan: false,
     isGlutenFree: false,
     featured: true,
-    prepSteps: [] as PrepStep[],
   }
 }
 
@@ -159,7 +167,9 @@ export const useProducts = () => {
   const { data: products } = useAsyncData<Product[]>(
     'products',
     async () => {
-      if (!datocmsToken) return DEFAULT_EMPTY_PRODUCTS
+      if (!datocmsToken) {
+        return DEFAULT_EMPTY_PRODUCTS
+      }
 
       try {
         const res = await $fetch<{
