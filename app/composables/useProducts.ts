@@ -1,5 +1,7 @@
 import type { Product, PrepStep } from '~/types/product'
 
+const DEFAULT_EMPTY_PRODUCTS: Product[] = []
+
 // DatoCMS GraphQL query — fetches all locales in one request.
 // Field names match the DatoCMS model described in the project plan.
 // Run this in the DatoCMS GraphQL playground to verify: https://cda-explorer.datocms.com/
@@ -39,6 +41,7 @@ const dastToPlainText = (dast: unknown): string => {
 const mapProduct = (raw: Record<string, any>): Product => {
   const title = raw.title ?? ''
   const description = dastToPlainText(raw.description?.value)
+
   return {
     slug: slugify(title) || raw.id,
     name: title,
@@ -72,7 +75,7 @@ export const useProducts = () => {
   const { data: products } = useAsyncData<Product[]>(
     'products',
     async () => {
-      if (!datocmsToken) return [] as Product[]
+      if (!datocmsToken) return DEFAULT_EMPTY_PRODUCTS
 
       try {
         const res = await $fetch<{
@@ -88,22 +91,22 @@ export const useProducts = () => {
         })
         if (res.errors?.length) {
           console.warn('[useProducts] DatoCMS GraphQL errors:', JSON.stringify(res.errors, null, 2))
-          return [] as Product[]
+          return DEFAULT_EMPTY_PRODUCTS
         }
         if (!res.data?.allProducts) {
           console.warn(
             '[useProducts] DatoCMS unexpected response shape:',
             JSON.stringify(res, null, 2),
           )
-          return [] as Product[]
+          return DEFAULT_EMPTY_PRODUCTS
         }
         return res.data.allProducts.map(mapProduct)
       } catch (err) {
         console.warn('[useProducts] DatoCMS fetch failed, falling back to static data:', err)
-        return [] as Product[]
+        return DEFAULT_EMPTY_PRODUCTS
       }
     },
-    { default: () => [] as Product[] },
+    { default: () => DEFAULT_EMPTY_PRODUCTS },
   )
 
   const getAll = (): Product[] => products.value ?? []

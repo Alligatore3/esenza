@@ -16,14 +16,23 @@ export const useCartStore = defineStore('cart', () => {
   const items = ref<CartItem[]>(cookie.value)
 
   // Keep cookie in sync whenever items change
-  watch(items, (v) => { cookie.value = v }, { deep: true })
+  watch(
+    items,
+    (v) => {
+      cookie.value = v
+    },
+    { deep: true },
+  )
 
   const count = computed(() => items.value.reduce((sum, i) => sum + i.quantity, 0))
 
-  const total = computed(() => items.value.reduce((sum, i) => sum + i.product.price * i.quantity, 0))
+  const total = computed(() =>
+    items.value.reduce((sum, i) => sum + i.product.price * i.quantity, 0),
+  )
 
   function add(product: Product, qty = 1) {
     const existing = items.value.find((i) => i.product.slug === product.slug)
+
     if (existing) {
       existing.quantity += qty
     } else {
@@ -31,20 +40,21 @@ export const useCartStore = defineStore('cart', () => {
     }
   }
 
-  function remove(slug: string) {
-    items.value = items.value.filter((i) => i.product.slug !== slug)
+  const remove = (slug: string) => {
+    items.value = items.value.filter(({ product }) => product.slug !== slug)
   }
 
-  function updateQty(slug: string, qty: number) {
+  const updateQty = (slug: string, qty: number) => {
     if (qty <= 0) {
       remove(slug)
       return
     }
-    const item = items.value.find((i) => i.product.slug === slug)
+
+    const item = items.value.find(({ product }) => product.slug === slug)
     if (item) item.quantity = qty
   }
 
-  function clear() {
+  const clear = () => {
     items.value = []
   }
 
