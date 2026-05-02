@@ -161,11 +161,10 @@
     "sustainabilityTitle": "Organic Ingredients and Responsible Packaging",
     "sustainabilityBody": "Each jar contains a base of organic ingredients, already measured and combined according to èSenza’s recipe. The project follows a zero-waste approach rooted in transparency, clear supply chains, and environmental care.",
     "tabs": {
-      "description": "Description",
+      "tips": "Tips",
       "nutrition": "Nutrition Facts",
       "reviews": "Reviews"
-    },
-    "storageNote": "Store in a cool, dry place. Follow the preparation instructions included with each product."
+    }
   },
   "footer": {
     "tagline": "A conscious way of shopping, with Italian organic mixes made simple.",

@@ -9,7 +9,7 @@ const props = defineProps<{ product: Product }>()
 
 const quantity = ref(1)
 
-const activeTab = ref<'description' | 'nutrition' | 'reviews'>('description')
+const activeTab = ref<'tips' | 'nutrition' | 'reviews'>('tips')
 
 const formattedPrice = computed(() => `¥${props.product.price.toLocaleString()}`)
 
@@ -113,7 +113,7 @@ const addToCart = () => cart.add(props.product, quantity.value)
     <div class="border border-border-soft dark:border-white/10 rounded-2xl overflow-hidden">
       <div class="flex border-b border-border-soft dark:border-white/10">
         <button
-          v-for="tab in ['description', 'nutrition', 'reviews'] as const"
+          v-for="tab in ['tips', 'nutrition', 'reviews'] as const"
           :key="tab"
           class="flex-1 py-3 text-xs font-semibold transition-colors duration-200"
           :class="
@@ -128,13 +128,14 @@ const addToCart = () => cart.add(props.product, quantity.value)
         </button>
       </div>
       <div class="p-5 text-sm text-text-muted dark:text-white/70 leading-relaxed">
-        <template v-if="activeTab === 'description'">
-          {{ product.description }}<br /><br />
-          <span class="text-xs">{{ t('product.storageNote') }}</span>
+        <template v-if="activeTab === 'tips'">
+          <div v-html="product.tips" />
         </template>
+
         <template v-else-if="activeTab === 'nutrition'">
           <p>Nutrition facts information will be available soon.</p>
         </template>
+
         <template v-else>
           <p>Customer reviews coming soon.</p>
         </template>
