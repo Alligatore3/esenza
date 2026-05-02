@@ -16,7 +16,7 @@ const PRODUCTS_QUERY = `
       description { value }
       howtoprepare { value }
       tips { value }
-      image { url alt }
+      primaryimage { url alt }
     }
   }
 `
@@ -140,9 +140,9 @@ const mapProduct = (raw: Record<string, any>): Product => {
     howToPrepare,
     tips,
     price: 0,
-    image: raw.image?.url ?? '',
-    images: raw.image?.url ? [raw.image.url] : [],
-    imageAlt: raw.image?.alt ?? title,
+    image: raw.primaryimage?.url ?? '',
+    images: raw.primaryimage?.url ? [raw.primaryimage.url] : [],
+    imageAlt: raw.primaryimage?.alt ?? title,
     badge: null,
     badgeColor: null,
     shortDescription: description,
