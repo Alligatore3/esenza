@@ -91,12 +91,12 @@ const email = ref('')
       <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p class="text-white/40 text-xs">{{ t('footer.copyright') }}</p>
         <div class="flex items-center gap-4">
-          <NuxtLink target="_blank" href="/pdf/eSenza_PrivacyPolicy.pdf" class="text-white/40 hover:text-white/70 text-xs transition-colors duration-200">
+          <a target="_blank" rel="noopener" href="/pdf/eSenza_PrivacyPolicy.pdf" class="text-white/40 hover:text-white/70 text-xs transition-colors duration-200">
             {{ t('footer.privacy') }}
-          </NuxtLink>
-          <NuxtLink target="_blank" href="/pdf/eSenza_TermsOfService.pdf" class="text-white/40 hover:text-white/70 text-xs transition-colors duration-200">
+          </a>
+          <a target="_blank" rel="noopener" href="/pdf/eSenza_TermsOfService.pdf" class="text-white/40 hover:text-white/70 text-xs transition-colors duration-200">
             {{ t('footer.terms') }}
-          </NuxtLink>
+          </a>
         </div>
       </div>
     </div>
