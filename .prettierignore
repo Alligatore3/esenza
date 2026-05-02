@@ -1,0 +1,11 @@
+node_modules
+.nuxt
+.output
+.vercel
+dist
+public
+*.lock
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+i18n/locales

@@ -1,23 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
-  devtools: { enabled: true },
 
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
     '@nuxtjs/i18n',
     '@pinia/nuxt',
+    '@nuxt/eslint',
   ],
-
-  runtimeConfig: {
-    stripeSecretKey: '',
-    stripeWebhookSecret: '',
-    public: {
-      datocmsToken: '',
-      stripePublishableKey: '',
-    },
-  },
 
   components: [
     { path: '~/components/App', pathPrefix: false },
@@ -27,25 +17,7 @@ export default defineNuxtConfig({
     { path: '~/components/how', pathPrefix: false },
     { path: '~/components/shop', pathPrefix: false },
   ],
-
-  css: ['~/assets/css/main.css'],
-
-  colorMode: {
-    classSuffix: '',
-    preference: 'light',
-    fallback: 'light',
-    storageKey: 'esenza-color-mode',
-  },
-
-  i18n: {
-    strategy: 'prefix_except_default',
-    defaultLocale: 'en',
-    langDir: 'locales/',
-    locales: [
-      { code: 'en', language: 'en-US', file: 'en.json', name: 'English' },
-      { code: 'ja', language: 'ja-JP', file: 'ja.json', name: '日本語' },
-    ],
-  },
+  devtools: { enabled: true },
 
   app: {
     head: {
@@ -73,5 +45,44 @@ export default defineNuxtConfig({
         },
       ],
     },
+  },
+
+  css: ['~/assets/css/main.css'],
+
+  colorMode: {
+    classSuffix: '',
+    preference: 'light',
+    fallback: 'light',
+    storageKey: 'esenza-color-mode',
+  },
+
+  runtimeConfig: {
+    stripeSecretKey: '',
+    stripeWebhookSecret: '',
+    public: {
+      datocmsToken: '',
+      stripePublishableKey: '',
+    },
+  },
+  compatibilityDate: '2025-07-15',
+
+  eslint: {
+    config: {
+      stylistic: {
+        indent: 2,
+        quotes: 'single',
+        semi: false,
+      },
+    },
+  },
+
+  i18n: {
+    strategy: 'prefix_except_default',
+    defaultLocale: 'en',
+    langDir: 'locales/',
+    locales: [
+      { code: 'en', language: 'en-US', file: 'en.json', name: 'English' },
+      { code: 'ja', language: 'ja-JP', file: 'ja.json', name: '日本語' },
+    ],
   },
 })

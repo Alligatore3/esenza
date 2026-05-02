@@ -5,7 +5,8 @@ const { t } = useI18n()
 <template>
   <section class="w-full bg-background-light dark:bg-background-dark py-16 md:py-24 px-4 md:px-10 relative overflow-hidden">
     <!-- Dot pattern decoration -->
-    <div class="absolute inset-0 opacity-30 dark:opacity-10 pointer-events-none"
+    <div
+class="absolute inset-0 opacity-30 dark:opacity-10 pointer-events-none"
          style="background-image: radial-gradient(circle, #6c8863 1px, transparent 1px); background-size: 28px 28px;"></div>
 
     <div class="relative z-10 max-w-2xl mx-auto text-center">

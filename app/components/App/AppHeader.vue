@@ -76,8 +76,8 @@ const isActive = (path: string) => route.path === localePath(path) || route.path
         <!-- Hamburger -->
         <button
           class="md:hidden p-2 rounded-lg text-text-main dark:text-white/80 hover:bg-background-light dark:hover:bg-surface-dark transition-colors"
-          @click="mobileOpen = !mobileOpen"
           :aria-label="mobileOpen ? 'Close menu' : 'Open menu'"
+          @click="mobileOpen = !mobileOpen"
         >
           <span class="material-symbols-outlined text-[22px]">{{ mobileOpen ? 'close' : 'menu' }}</span>
         </button>

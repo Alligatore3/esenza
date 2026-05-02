@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { t } = useI18n()
 
-const props = defineProps<{
+defineProps<{
   activeFilter: string
   productCount: number
 }>()
@@ -25,16 +25,20 @@ const secondaryFilters = [
     class="sticky z-40 w-full bg-white/95 dark:bg-background-dark/95 backdrop-blur-sm border-b border-border-light dark:border-white/5"
     style="top: var(--header-height)"
   >
-    <div class="max-w-wide mx-auto px-4 md:px-10 lg:px-16 py-3 flex items-center gap-3 overflow-x-auto no-scrollbar">
+    <div
+      class="max-w-wide mx-auto px-4 md:px-10 lg:px-16 py-3 flex items-center gap-3 overflow-x-auto no-scrollbar"
+    >
       <!-- Primary filters -->
       <div class="flex items-center gap-2 flex-shrink-0">
         <button
           v-for="f in primaryFilters"
           :key="f.key"
           class="flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 flex-shrink-0"
-          :class="activeFilter === f.key
-            ? 'bg-primary text-background-dark shadow-sm'
-            : 'bg-background-light dark:bg-surface-dark text-text-main dark:text-white/80 hover:bg-primary/10 hover:text-primary'"
+          :class="
+            activeFilter === f.key
+              ? 'bg-primary text-background-dark shadow-sm'
+              : 'bg-background-light dark:bg-surface-dark text-text-main dark:text-white/80 hover:bg-primary/10 hover:text-primary'
+          "
           @click="emit('filter-change', f.key)"
         >
           {{ t(f.labelKey) }}
@@ -51,9 +55,11 @@ const secondaryFilters = [
           v-for="f in secondaryFilters"
           :key="f.key"
           class="flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-medium transition-all duration-200 flex-shrink-0"
-          :class="activeFilter === f.key
-            ? 'bg-primary text-background-dark shadow-sm'
-            : 'bg-background-light dark:bg-surface-dark text-text-main dark:text-white/80 hover:bg-primary/10 hover:text-primary'"
+          :class="
+            activeFilter === f.key
+              ? 'bg-primary text-background-dark shadow-sm'
+              : 'bg-background-light dark:bg-surface-dark text-text-main dark:text-white/80 hover:bg-primary/10 hover:text-primary'
+          "
           @click="emit('filter-change', f.key)"
         >
           <span class="material-symbols-outlined text-[16px]">{{ f.icon }}</span>
@@ -62,7 +68,9 @@ const secondaryFilters = [
       </div>
 
       <!-- Spacer + count -->
-      <div class="ml-auto flex-shrink-0 text-xs text-text-muted dark:text-white/40 font-medium whitespace-nowrap">
+      <div
+        class="ml-auto flex-shrink-0 text-xs text-text-muted dark:text-white/40 font-medium whitespace-nowrap"
+      >
         {{ t('shop.productCount', { count: productCount }) }}
       </div>
     </div>

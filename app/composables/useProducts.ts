@@ -17,7 +17,9 @@ const PRODUCTS_QUERY = `
 `
 
 const slugify = (s: string): string =>
-  s.toLowerCase().trim()
+  s
+    .toLowerCase()
+    .trim()
     .replace(/[^a-z0-9\s-]/g, '')
     .replace(/\s+/g, '-')
     .replace(/-+/g, '-')
@@ -61,39 +63,48 @@ const mapProduct = (raw: Record<string, any>): Product => {
 }
 
 export const useProducts = () => {
-  const { public: { datocmsToken } } = useRuntimeConfig()
+  const {
+    public: { datocmsToken },
+  } = useRuntimeConfig()
 
   // When no token is set (local dev without DatoCMS), static data is used.
   // Once NUXT_PUBLIC_DATOCMS_TOKEN is set, data is fetched from DatoCMS.
-  const { data: products } = useAsyncData<Product[]>('products', async () => {
-    if (!datocmsToken) return [] as Product[]
+  const { data: products } = useAsyncData<Product[]>(
+    'products',
+    async () => {
+      if (!datocmsToken) return [] as Product[]
 
-    try {
-      const res = await $fetch<{
-        data?: { allProducts: Record<string, any>[] }
-        errors?: { message: string; extensions?: unknown }[]
-      }>('https://graphql.datocms.com/', {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${datocmsToken}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ query: PRODUCTS_QUERY }),
-      })
-      if (res.errors?.length) {
-        console.warn('[useProducts] DatoCMS GraphQL errors:', JSON.stringify(res.errors, null, 2))
+      try {
+        const res = await $fetch<{
+          data?: { allProducts: Record<string, any>[] }
+          errors?: { message: string; extensions?: unknown }[]
+        }>('https://graphql.datocms.com/', {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${datocmsToken}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ query: PRODUCTS_QUERY }),
+        })
+        if (res.errors?.length) {
+          console.warn('[useProducts] DatoCMS GraphQL errors:', JSON.stringify(res.errors, null, 2))
+          return [] as Product[]
+        }
+        if (!res.data?.allProducts) {
+          console.warn(
+            '[useProducts] DatoCMS unexpected response shape:',
+            JSON.stringify(res, null, 2),
+          )
+          return [] as Product[]
+        }
+        return res.data.allProducts.map(mapProduct)
+      } catch (err) {
+        console.warn('[useProducts] DatoCMS fetch failed, falling back to static data:', err)
         return [] as Product[]
       }
-      if (!res.data?.allProducts) {
-        console.warn('[useProducts] DatoCMS unexpected response shape:', JSON.stringify(res, null, 2))
-        return [] as Product[]
-      }
-      return res.data.allProducts.map(mapProduct)
-    } catch (err) {
-      console.warn('[useProducts] DatoCMS fetch failed, falling back to static data:', err)
-      return [] as Product[]
-    }
-  }, { default: () => [] as Product[] })
+    },
+    { default: () => [] as Product[] },
+  )
 
   const getAll = (): Product[] => products.value ?? []
 
@@ -102,17 +113,21 @@ export const useProducts = () => {
     return limit ? featured.slice(0, limit) : featured
   }
 
-  const getBySlug = (slug: string): Product | undefined =>
-    getAll().find((p) => p.slug === slug)
+  const getBySlug = (slug: string): Product | undefined => getAll().find((p) => p.slug === slug)
 
   const filterProducts = (filter: string): Product[] => {
     const all = getAll()
     switch (filter) {
-      case 'sweet': return all.filter((p) => p.category === 'sweet')
-      case 'savory': return all.filter((p) => p.category === 'savory')
-      case 'vegan': return all.filter((p) => p.isVegan)
-      case 'gf': return all.filter((p) => p.isGlutenFree)
-      default: return all
+      case 'sweet':
+        return all.filter((p) => p.category === 'sweet')
+      case 'savory':
+        return all.filter((p) => p.category === 'savory')
+      case 'vegan':
+        return all.filter((p) => p.isVegan)
+      case 'gf':
+        return all.filter((p) => p.isGlutenFree)
+      default:
+        return all
     }
   }
 
