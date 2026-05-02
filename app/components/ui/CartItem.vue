@@ -6,8 +6,8 @@ const props = defineProps<{ item: CartItem }>()
 const cart = useCartStore()
 const localePath = useLocalePath()
 
-const formattedPrice = computed(() =>
-  `¥${(props.item.product.price * props.item.quantity).toLocaleString()}`
+const formattedPrice = computed(
+  () => `¥${(props.item.product.price * props.item.quantity).toLocaleString()}`,
 )
 </script>
 
@@ -28,10 +28,12 @@ const formattedPrice = computed(() =>
     <!-- Info -->
     <div class="flex-1 min-w-0">
       <NuxtLink :to="localePath(`/shop/${item.product.slug}`)">
-        <p class="font-semibold text-text-main dark:text-white text-sm leading-snug hover:text-primary transition-colors truncate">
+        <p
+          class="font-semibold text-text-main dark:text-white text-sm leading-snug hover:text-primary transition-colors truncate"
+        >
           {{ item.product.name }}
         </p>
-        <p class="text-xs text-text-muted dark:text-white/50">{{ item.product.nameJa }}</p>
+        <p class="text-xs text-text-muted dark:text-white/50">{{ item.product.subTitle }}</p>
       </NuxtLink>
       <p class="text-xs text-text-muted dark:text-white/50 mt-0.5">
         ¥{{ item.product.price.toLocaleString() }} × {{ item.quantity }}
@@ -39,14 +41,18 @@ const formattedPrice = computed(() =>
     </div>
 
     <!-- Qty controls -->
-    <div class="flex items-center border border-border-soft dark:border-white/20 rounded-xl overflow-hidden">
+    <div
+      class="flex items-center border border-border-soft dark:border-white/20 rounded-xl overflow-hidden"
+    >
       <button
         class="w-8 h-8 flex items-center justify-center hover:bg-background-light dark:hover:bg-surface-dark text-text-main dark:text-white transition-colors"
         @click="cart.updateQty(item.product.slug, item.quantity - 1)"
       >
         <span class="material-symbols-outlined text-[16px]">remove</span>
       </button>
-      <span class="w-8 text-center text-sm font-semibold text-text-main dark:text-white">{{ item.quantity }}</span>
+      <span class="w-8 text-center text-sm font-semibold text-text-main dark:text-white">{{
+        item.quantity
+      }}</span>
       <button
         class="w-8 h-8 flex items-center justify-center hover:bg-background-light dark:hover:bg-surface-dark text-text-main dark:text-white transition-colors"
         @click="cart.updateQty(item.product.slug, item.quantity + 1)"

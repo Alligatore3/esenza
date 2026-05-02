@@ -7,7 +7,7 @@ export interface PrepStep {
 export interface Product {
   slug: string
   name: string
-  nameJa: string
+  subTitle: string
   price: number
   image: string
   images: string[]

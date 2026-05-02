@@ -12,6 +12,7 @@ const PRODUCTS_QUERY = `
     allProducts(orderBy: _createdAt_ASC, first: 100) {
       id
       title
+      subtitle
       description { value }
       image { url alt }
     }
@@ -40,12 +41,13 @@ const dastToPlainText = (dast: unknown): string => {
 
 const mapProduct = (raw: Record<string, any>): Product => {
   const title = raw.title ?? ''
+  const subTitle = raw.subtitle ?? ''
   const description = dastToPlainText(raw.description?.value)
 
   return {
     slug: slugify(title) || raw.id,
     name: title,
-    nameJa: title,
+    subTitle,
     price: 0,
     image: raw.image?.url ?? '',
     images: raw.image?.url ? [raw.image.url] : [],
