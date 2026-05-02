@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import type { Product } from '~/data/products'
+import type { Product } from '~/types/product'
 
 const { t } = useI18n()
 
 const props = defineProps<{ product: Product }>()
 
+const cart = useCartStore()
 const quantity = ref(1)
 
 const activeTab = ref<'description' | 'nutrition' | 'reviews'>('description')
@@ -14,6 +15,8 @@ const formattedPrice = computed(() => `¥${props.product.price.toLocaleString()}
 const increment = () => { quantity.value++ }
 
 const decrement = () => { if (quantity.value > 1) quantity.value-- }
+
+const addToCart = () => cart.add(props.product, quantity.value)
 </script>
 
 <template>
@@ -60,6 +63,7 @@ const decrement = () => { if (quantity.value > 1) quantity.value-- }
       <!-- Add to cart -->
       <button
         class="w-full py-4 bg-primary hover:bg-primary-dark text-background-dark font-bold text-sm rounded-xl flex items-center justify-center gap-2 transition-colors duration-200"
+        @click="addToCart"
       >
         <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
         {{ t('product.addToCart') }}

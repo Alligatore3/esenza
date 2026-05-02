@@ -3,6 +3,7 @@ const { t } = useI18n()
 const localePath = useLocalePath()
 const route = useRoute()
 const mobileOpen = ref(false)
+const cart = useCartStore()
 
 const navLinks = computed(() => [
   { key: 'nav.shop', path: '/shop' },
@@ -51,13 +52,17 @@ const isActive = (path: string) => route.path === localePath(path) || route.path
         </button>
 
         <!-- Cart -->
-        <button
+        <NuxtLink
+          :to="localePath('/cart')"
           class="p-2 rounded-lg text-text-main dark:text-white/80 hover:bg-background-light dark:hover:bg-surface-dark transition-colors relative"
           :aria-label="t('nav.cart')"
         >
           <span class="material-symbols-outlined text-[22px]">shopping_bag</span>
-          <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-primary rounded-full"></span>
-        </button>
+          <span
+            v-if="cart.count > 0"
+            class="absolute top-1 right-1 min-w-[16px] h-4 px-0.5 flex items-center justify-center bg-primary text-background-dark text-[10px] font-bold rounded-full leading-none"
+          >{{ cart.count }}</span>
+        </NuxtLink>
 
         <!-- User -->
         <button
@@ -71,8 +76,8 @@ const isActive = (path: string) => route.path === localePath(path) || route.path
         <!-- Hamburger -->
         <button
           class="md:hidden p-2 rounded-lg text-text-main dark:text-white/80 hover:bg-background-light dark:hover:bg-surface-dark transition-colors"
-          @click="mobileOpen = !mobileOpen"
           :aria-label="mobileOpen ? 'Close menu' : 'Open menu'"
+          @click="mobileOpen = !mobileOpen"
         >
           <span class="material-symbols-outlined text-[22px]">{{ mobileOpen ? 'close' : 'menu' }}</span>
         </button>
