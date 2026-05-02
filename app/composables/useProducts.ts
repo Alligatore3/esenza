@@ -34,11 +34,6 @@ const dastToPlainText = (dast: unknown): string => {
   return children.map(dastToPlainText).join(' ').replace(/\s+/g, ' ').trim()
 }
 
-type LocaleValue = { locale: string; value: string }
-
-const localeVal = (arr: LocaleValue[] | undefined, lang: string): string =>
-  arr?.find((l) => l.locale === lang)?.value ?? ''
-
 const mapProduct = (raw: Record<string, any>): Product => {
   const title = raw.title ?? ''
   const description = dastToPlainText(raw.description?.value)
