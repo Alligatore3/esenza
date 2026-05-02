@@ -7,6 +7,7 @@ const props = defineProps<{
 }>()
 
 const localePath = useLocalePath()
+
 const cart = useCartStore()
 
 const badgeClass = computed(() => {
@@ -62,34 +63,18 @@ const formattedPrice = computed(() => `¥${props.product.price.toLocaleString()}
         >
           {{ product.name }}
         </h3>
-        <p class="text-xs text-text-muted dark:text-white/50 mt-0.5">{{ product.subTitle }}</p>
       </NuxtLink>
 
-      <div class="flex items-center justify-between mt-2">
+      <div class="flex items-center justify-between mt-2 gap-3">
         <span class="font-bold text-text-main dark:text-white">{{ formattedPrice }}</span>
-        <span
-          v-if="product.shortDescription"
-          class="text-xs text-text-muted dark:text-white/50 truncate ml-2"
-        >
-          {{ product.shortDescription }}
-        </span>
-      </div>
 
-      <!-- Extended info for shop variant -->
-      <template v-if="variant === 'full'">
-        <p class="text-sm text-text-muted dark:text-white/60 mt-1 line-clamp-2">
-          {{ product.description }}
+        <p
+          class="text-xs text-text-muted dark:text-white/50 mt-0.5"
+          :class="variant !== 'full' ? 'line-clamp-2' : ''"
+        >
+          {{ product.subTitle }}
         </p>
-        <div v-if="product.tags.length" class="flex flex-wrap gap-1.5 mt-2">
-          <span
-            v-for="tag in product.tags"
-            :key="tag"
-            class="text-xs px-2 py-0.5 rounded-full bg-background-light dark:bg-surface-dark text-text-muted dark:text-white/50"
-          >
-            {{ tag }}
-          </span>
-        </div>
-      </template>
+      </div>
     </div>
   </div>
 </template>

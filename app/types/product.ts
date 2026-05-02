@@ -9,11 +9,9 @@ export interface Product {
   badge: string | null
   badgeColor: 'green' | 'yellow' | 'white' | null
   shortDescription: string
-  shortDescriptionJa: string
   description: string
   howToPrepare: string
   tips: string
-  descriptionJa: string
   tags: string[]
   category: 'sweet' | 'savory' | 'breakfast'
   isVegan: boolean

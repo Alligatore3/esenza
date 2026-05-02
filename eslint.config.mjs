@@ -6,11 +6,9 @@
 import withNuxt from './.nuxt/eslint.config.mjs'
 import prettier from 'eslint-config-prettier'
 
-export default withNuxt(
-  prettier,
-  {
-    rules: {
-      // Project-specific overrides go here.
-    },
+export default withNuxt(prettier, {
+  rules: {
+    // Project-specific overrides go here.
+    'vue/no-v-html': 'off',
   },
-)
+})

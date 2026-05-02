@@ -7,6 +7,10 @@ const DEFAULT_EMPTY_PRODUCTS: Product[] = []
 // Run this in the DatoCMS GraphQL playground to verify: https://cda-explorer.datocms.com/
 // Minimal model: title, description, image.
 // Slug is derived from the title (kebab-case) since the model has no slug field yet.
+// DatoCMS API IDs are snake_case, but GraphQL exposes them as camelCase.
+// All text fields are localized (EN + JA) in the DatoCMS model, so we use the
+// auto-generated `_all*Locales` variants to fetch every locale in one request
+// and map them in JS via `pickLocale*`.
 const PRODUCTS_QUERY = `
   query AllProducts {
     allProducts(orderBy: _createdAt_ASC, first: 100) {
@@ -133,6 +137,9 @@ const mapProduct = (raw: Record<string, any>): Product => {
   const howToPrepare = dastToHtml(raw.howtoprepare?.value)
   const tips = dastToHtml(raw.tips?.value)
 
+  const primary = raw.primaryImage
+  const gallery: { url: string; alt: string | null }[] = raw.galleryImages ?? []
+
   return {
     slug: slugify(title) || raw.id,
     name: title,
@@ -146,9 +153,7 @@ const mapProduct = (raw: Record<string, any>): Product => {
     badge: null,
     badgeColor: null,
     shortDescription: description,
-    shortDescriptionJa: description,
     description,
-    descriptionJa: description,
     tags: [],
     category: 'savory',
     isVegan: false,
