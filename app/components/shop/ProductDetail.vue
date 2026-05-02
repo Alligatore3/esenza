@@ -47,9 +47,10 @@ const addToCart = () => cart.add(props.product, quantity.value)
     </div>
 
     <!-- Description -->
-    <p class="text-sm text-text-muted dark:text-white/70 leading-relaxed">
-      {{ product.description }}
-    </p>
+    <div
+      class="text-sm text-text-muted dark:text-white/70 leading-relaxed"
+      v-html="product.description"
+    />
 
     <!-- Quantity + Add to Cart -->
     <div class="flex flex-col gap-3">

@@ -19,30 +19,112 @@ const PRODUCTS_QUERY = `
   }
 `
 
-const slugify = (s: string): string =>
-  s
+const slugify = (value: string): string =>
+  value
     .toLowerCase()
     .trim()
     .replace(/[^a-z0-9\s-]/g, '')
     .replace(/\s+/g, '-')
     .replace(/-+/g, '-')
 
-// Extracts plain text from a DatoCMS Structured Text DAST node.
-// DAST = { schema, document: { type: 'root', children: [...] } } — children may be
-// paragraphs, headings, lists, etc., each with nested children whose leaf nodes have `value`.
-const dastToPlainText = (dast: unknown): string => {
+// Renders a DatoCMS Structured Text DAST node tree to an HTML string suitable
+// for `v-html`. DAST = { schema, document: { type: 'root', children: [...] } }
+// where each node has a `type` (paragraph, heading, list, listItem, link,
+// blockquote, code, thematicBreak, span). Leaf `span` nodes carry the actual
+// text in `value` plus optional `marks` (strong, emphasis, code, underline,
+// strikethrough, highlight).
+//
+// Note: DatoCMS authors are trusted, but we still HTML-escape leaf text to
+// avoid surprises if someone pastes raw HTML into the CMS.
+const escapeHtml = (value: string): string =>
+  value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+
+const MARK_TAGS: Record<string, string> = {
+  strikethrough: 's',
+  highlight: 'mark',
+  strong: 'strong',
+  underline: 'u',
+  emphasis: 'em',
+  code: 'code',
+}
+
+const wrapMarks = (text: string, marks: string[] | undefined): string => {
+  if (!marks?.length) return text
+  return marks.reduce((acc, mark) => {
+    const tag = MARK_TAGS[mark]
+    return tag ? `<${tag}>${acc}</${tag}>` : acc
+  }, text)
+}
+
+type DastNode = {
+  type?: string
+  value?: string
+  marks?: string[]
+  level?: number
+  style?: 'bulleted' | 'numbered'
+  url?: string
+  language?: string
+  code?: string
+  children?: DastNode[]
+}
+
+const renderChildren = (children: DastNode[] | undefined): string =>
+  (children ?? []).map(renderNode).join('')
+
+const renderNode = (node: DastNode): string => {
+  if (!node || typeof node !== 'object') return ''
+
+  // Leaf text node — span (or untyped node carrying a value).
+  if (typeof node.value === 'string' && (!node.type || node.type === 'span')) {
+    return wrapMarks(escapeHtml(node.value), node.marks)
+  }
+
+  switch (node.type) {
+    case 'paragraph':
+      return `<p>${renderChildren(node.children)}</p>`
+    case 'heading': {
+      const level = Math.min(Math.max(node.level ?? 2, 1), 6)
+      return `<h${level}>${renderChildren(node.children)}</h${level}>`
+    }
+    case 'list': {
+      const tag = node.style === 'numbered' ? 'ol' : 'ul'
+      return `<${tag}>${renderChildren(node.children)}</${tag}>`
+    }
+    case 'listItem':
+      return `<li>${renderChildren(node.children)}</li>`
+    case 'link':
+      return `<a href="${escapeHtml(node.url ?? '#')}" rel="noopener" target="_blank">${renderChildren(node.children)}</a>`
+    case 'blockquote':
+      return `<blockquote>${renderChildren(node.children)}</blockquote>`
+    case 'code':
+      return `<pre><code${
+        node.language ? ` class="language-${escapeHtml(node.language)}"` : ''
+      }>${escapeHtml(node.code ?? '')}</code></pre>`
+    case 'thematicBreak':
+      return '<hr>'
+    case 'root':
+      return renderChildren(node.children)
+    default:
+      // Unknown node type — fall back to rendering its children if any.
+      return renderChildren(node.children)
+  }
+}
+
+const dastToHtml = (dast: unknown): string => {
   if (!dast || typeof dast !== 'object') return ''
-  const node = dast as Record<string, any>
-  if (typeof node.value === 'string') return node.value
-  const children = node.document?.children ?? node.children
-  if (!Array.isArray(children)) return ''
-  return children.map(dastToPlainText).join(' ').replace(/\s+/g, ' ').trim()
+  const root = (dast as { document?: DastNode }).document ?? (dast as DastNode)
+  return renderNode(root)
 }
 
 const mapProduct = (raw: Record<string, any>): Product => {
   const title = raw.title ?? ''
   const subTitle = raw.subtitle ?? ''
-  const description = dastToPlainText(raw.description?.value)
+  const description = dastToHtml(raw.description?.value)
 
   return {
     slug: slugify(title) || raw.id,
