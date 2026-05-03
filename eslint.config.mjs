@@ -9,6 +9,7 @@ import prettier from 'eslint-config-prettier'
 export default withNuxt(prettier, {
   rules: {
     // Project-specific overrides go here.
+    'vue/multi-word-component-names': 'off',
     'vue/no-v-html': 'off',
   },
 })

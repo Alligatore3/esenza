@@ -21,6 +21,7 @@ const PRODUCTS_QUERY = `
       howtoprepare { value }
       tips { value }
       primaryimage { url alt }
+      galleryimages { url alt }
     }
   }
 `
@@ -137,28 +138,19 @@ const mapProduct = (raw: Record<string, any>): Product => {
   const howToPrepare = dastToHtml(raw.howtoprepare?.value)
   const tips = dastToHtml(raw.tips?.value)
 
-  const primary = raw.primaryImage
-  const gallery: { url: string; alt: string | null }[] = raw.galleryImages ?? []
+  const images: { url: string; alt: string | null }[] = raw.galleryImages ?? []
 
   return {
+    imageAlt: raw.primaryimage?.alt ?? title,
+    image: raw.primaryimage?.url ?? '',
     slug: slugify(title) || raw.id,
+    howToPrepare,
     name: title,
     subTitle,
-    howToPrepare,
     tips,
     price: 0,
-    image: raw.primaryimage?.url ?? '',
-    images: raw.primaryimage?.url ? [raw.primaryimage.url] : [],
-    imageAlt: raw.primaryimage?.alt ?? title,
-    badge: null,
-    badgeColor: null,
-    shortDescription: description,
+    images,
     description,
-    tags: [],
-    category: 'savory',
-    isVegan: false,
-    isGlutenFree: false,
-    featured: true,
   }
 }
 
@@ -211,26 +203,16 @@ export const useProducts = () => {
   const getAll = (): Product[] => products.value ?? []
 
   const getFeatured = (limit?: number): Product[] => {
-    const featured = getAll().filter((p) => p.featured)
+    const featured = getAll()
     return limit ? featured.slice(0, limit) : featured
   }
 
   const getBySlug = (slug: string): Product | undefined => getAll().find((p) => p.slug === slug)
 
-  const filterProducts = (filter: string): Product[] => {
+  // @todo: not working
+  const filterProducts = (): Product[] => {
     const all = getAll()
-    switch (filter) {
-      case 'sweet':
-        return all.filter((p) => p.category === 'sweet')
-      case 'savory':
-        return all.filter((p) => p.category === 'savory')
-      case 'vegan':
-        return all.filter((p) => p.isVegan)
-      case 'gf':
-        return all.filter((p) => p.isGlutenFree)
-      default:
-        return all
-    }
+    return all
   }
 
   return { products, getAll, getFeatured, getBySlug, filterProducts }
