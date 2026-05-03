@@ -5,18 +5,29 @@ import type { ProductImage } from '~/types/productImage'
 
 const props = defineProps<{ product: Product }>()
 
-const activeImage = ref(0)
+const defaultImageIndex = crypto.randomUUID()
+
+const activeImage = ref<string>(defaultImageIndex)
 
 const defaultImage = computed<ProductImage>(() => ({
   alt: props.product.imageAlt,
   url: props.product.image,
+  index: defaultImageIndex,
 }))
 
 const currentPrimaryImage = ref<ProductImage>(defaultImage.value)
 
-const galleryImages = computed<ProductImage[]>(() => [defaultImage.value, ...props.product.images])
+const galleryImages = computed<ProductImage[]>(() =>
+  [defaultImage.value, ...props.product.images].map((value) => ({
+    ...value,
+    index: crypto.randomUUID(),
+  })),
+)
 
-const changeImage = (image: ProductImage) => (currentPrimaryImage.value = image)
+const changeImage = (image: ProductImage) => {
+  currentPrimaryImage.value = image
+  activeImage.value = image.index
+}
 </script>
 
 <template>
@@ -36,16 +47,15 @@ const changeImage = (image: ProductImage) => (currentPrimaryImage.value = image)
     <!-- Thumbnails -->
     <div v-if="galleryImages.length >= 1" class="grid grid-cols-3 gap-3">
       <button
-        v-for="(image, i) in galleryImages"
-        :key="i"
+        v-for="image in galleryImages"
+        :key="image.index"
         @click.prevent="() => changeImage(image)"
         class="aspect-square rounded-xl overflow-hidden border-2 transition-all duration-200"
         :class="
-          activeImage === i
+          activeImage === image.index
             ? 'border-primary'
             : 'border-transparent hover:border-border-soft dark:hover:border-white/20'
         "
-        @click="activeImage = i"
       >
         <img
           :src="image.url"

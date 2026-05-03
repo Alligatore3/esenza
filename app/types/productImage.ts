@@ -1,1 +1,1 @@
-export type ProductImage = { url: string; alt: string | null }
+export type ProductImage = { index: string; url: string; alt: string | null }
