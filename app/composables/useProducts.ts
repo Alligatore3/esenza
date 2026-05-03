@@ -2,25 +2,24 @@ import type { Product } from '~/types/product'
 
 const DEFAULT_EMPTY_PRODUCTS: Product[] = []
 
-// Maps Nuxt i18n locale codes to DatoCMS locale identifiers.
-const DATO_LOCALE_MAP: Record<string, string> = {
-  en: 'en',
-  ja: 'japa',
-}
-
-// Accepts a $locale variable so DatoCMS returns each text field in the
-// requested language. `slugTitle` always fetches the English title so that
-// URL slugs remain stable across locales.
+// DatoCMS GraphQL query — fetches all locales in one request.
+// Field names match the DatoCMS model described in the project plan.
+// Run this in the DatoCMS GraphQL playground to verify: https://cda-explorer.datocms.com/
+// Minimal model: title, description, image.
+// Slug is derived from the title (kebab-case) since the model has no slug field yet.
+// DatoCMS API IDs are snake_case, but GraphQL exposes them as camelCase.
+// All text fields are localized (EN + JA) in the DatoCMS model, so we use the
+// auto-generated `_all*Locales` variants to fetch every locale in one request
+// and map them in JS via `pickLocale*`.
 const PRODUCTS_QUERY = `
-  query AllProducts($locale: SiteLocale!) {
+  query AllProducts {
     allProducts(orderBy: _createdAt_ASC, first: 100) {
       id
-      slugTitle: title(locale: en)
-      title(locale: $locale)
-      subtitle(locale: $locale)
-      description(locale: $locale) { value }
-      howtoprepare(locale: $locale) { value }
-      tips(locale: $locale) { value }
+      title
+      subtitle
+      description { value }
+      howtoprepare { value }
+      tips { value }
       primaryimage { url alt }
       galleryimages { url alt }
     }
@@ -134,7 +133,6 @@ const dastToHtml = (dast: unknown): string => {
 
 const mapProduct = (raw: Record<string, any>): Product => {
   const title = raw.title ?? ''
-  const slugSource = raw.slugTitle ?? title
   const subTitle = raw.subtitle ?? ''
   const description = dastToHtml(raw.description?.value)
   const howToPrepare = dastToHtml(raw.howtoprepare?.value)
@@ -145,7 +143,7 @@ const mapProduct = (raw: Record<string, any>): Product => {
   return {
     imageAlt: raw.primaryimage?.alt ?? title,
     image: raw.primaryimage?.url ?? '',
-    slug: slugify(slugSource) || raw.id,
+    slug: slugify(title) || raw.id,
     howToPrepare,
     name: title,
     description,
@@ -161,14 +159,10 @@ export const useProducts = () => {
     public: { datocmsToken },
   } = useRuntimeConfig()
 
-  const { locale } = useI18n()
-  const datoLocale = computed(() => DATO_LOCALE_MAP[locale.value] ?? 'en')
-
   // When no token is set (local dev without DatoCMS), static data is used.
   // Once NUXT_PUBLIC_DATOCMS_TOKEN is set, data is fetched from DatoCMS.
-  // The reactive key causes Nuxt to re-fetch automatically on locale change.
   const { data: products } = useAsyncData<Product[]>(
-    () => `products-${datoLocale.value}`,
+    'products',
     async () => {
       if (!datocmsToken) {
         return DEFAULT_EMPTY_PRODUCTS
@@ -184,7 +178,7 @@ export const useProducts = () => {
             Authorization: `Bearer ${datocmsToken}`,
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ query: PRODUCTS_QUERY, variables: { locale: datoLocale.value } }),
+          body: JSON.stringify({ query: PRODUCTS_QUERY }),
         })
         if (res.errors?.length) {
           console.warn('[useProducts] DatoCMS GraphQL errors:', JSON.stringify(res.errors, null, 2))
