@@ -157,11 +157,12 @@ const mapProduct = (raw: Record<string, any>): Product => {
 }
 
 export const useProducts = () => {
+  const { locale } = useI18n()
+
   const {
     public: { datocmsToken },
   } = useRuntimeConfig()
 
-  const { locale } = useI18n()
   const datoLocale = computed(() => DATO_LOCALE_MAP[locale.value] ?? 'en')
 
   // When no token is set (local dev without DatoCMS), static data is used.
