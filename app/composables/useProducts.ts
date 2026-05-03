@@ -138,7 +138,7 @@ const mapProduct = (raw: Record<string, any>): Product => {
   const howToPrepare = dastToHtml(raw.howtoprepare?.value)
   const tips = dastToHtml(raw.tips?.value)
 
-  const images: { url: string; alt: string | null }[] = raw.galleryImages ?? []
+  const images: { url: string; alt: string | null }[] = raw.galleryimages ?? []
 
   return {
     imageAlt: raw.primaryimage?.alt ?? title,
@@ -146,11 +146,11 @@ const mapProduct = (raw: Record<string, any>): Product => {
     slug: slugify(title) || raw.id,
     howToPrepare,
     name: title,
+    description,
     subTitle,
-    tips,
     price: 0,
     images,
-    description,
+    tips,
   }
 }
 

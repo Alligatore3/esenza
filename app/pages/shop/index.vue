@@ -5,7 +5,7 @@ const { filterProducts } = useProducts()
 
 const activeFilter = ref('all')
 
-const products = computed(() => filterProducts(activeFilter.value))
+const products = computed(() => filterProducts())
 
 useSeoMeta({
   title: 'Shop — èSenza Japan',

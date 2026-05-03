@@ -10,13 +10,6 @@ const localePath = useLocalePath()
 
 const cart = useCartStore()
 
-const badgeClass = computed(() => {
-  if (props.product.badgeColor === 'yellow')
-    return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-300'
-  if (props.product.badgeColor === 'white') return 'bg-white/90 text-text-main'
-  return 'bg-primary/10 text-green-800 dark:bg-primary/20 dark:text-primary'
-})
-
 const formattedPrice = computed(() => `¥${props.product.price.toLocaleString()}`)
 </script>
 
@@ -35,14 +28,6 @@ const formattedPrice = computed(() => `¥${props.product.price.toLocaleString()}
         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         loading="lazy"
       />
-      <!-- Badge -->
-      <span
-        v-if="product.badge"
-        class="absolute top-3 left-3 text-xs font-semibold px-2.5 py-1 rounded-full"
-        :class="badgeClass"
-      >
-        {{ product.badge }}
-      </span>
       <!-- Add to cart hover overlay -->
       <button
         class="absolute bottom-3 left-3 right-3 py-2.5 bg-background-dark/90 hover:bg-primary text-white hover:text-background-dark text-sm font-semibold rounded-xl opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300"

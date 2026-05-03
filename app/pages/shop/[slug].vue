@@ -18,7 +18,7 @@ watchEffect(() => {
 const activeImage = ref(0)
 
 useSeoMeta({
-  title: () => product.value ? `${product.value.name} — èSenza Japan` : 'èSenza Japan',
+  title: () => (product.value ? `${product.value.name} — èSenza Japan` : 'èSenza Japan'),
   description: () => product.value?.description ?? '',
 })
 </script>
@@ -28,11 +28,17 @@ useSeoMeta({
     <div v-if="product" class="max-w-wide mx-auto px-4 md:px-10 lg:px-16 py-6">
       <!-- Breadcrumb -->
       <nav class="flex items-center gap-2 text-sm mb-8">
-        <NuxtLink :to="localePath('/')" class="text-text-muted dark:text-white/50 hover:text-primary transition-colors">
+        <NuxtLink
+          :to="localePath('/')"
+          class="text-text-muted dark:text-white/50 hover:text-primary transition-colors"
+        >
           {{ t('product.breadcrumb.home') }}
         </NuxtLink>
         <span class="text-text-muted dark:text-white/30">/</span>
-        <NuxtLink :to="localePath('/shop')" class="text-text-muted dark:text-white/50 hover:text-primary transition-colors">
+        <NuxtLink
+          :to="localePath('/shop')"
+          class="text-text-muted dark:text-white/50 hover:text-primary transition-colors"
+        >
           {{ t('product.breadcrumb.shop') }}
         </NuxtLink>
         <span class="text-text-muted dark:text-white/30">/</span>
@@ -44,31 +50,30 @@ useSeoMeta({
         <!-- Left: Image gallery (7 cols) -->
         <div class="lg:col-span-7 flex flex-col gap-4 lg:sticky lg:top-28">
           <!-- Main image -->
-          <div class="w-full aspect-[4/5] md:aspect-square lg:aspect-[4/3] rounded-2xl overflow-hidden bg-surface-light dark:bg-surface-dark relative">
-            <img
-              :src="product.images[activeImage]"
-              :alt="product.imageAlt"
-              class="w-full h-full object-cover"
-            />
-            <!-- Organic badge -->
-            <span
-              v-if="product.badge"
-              class="absolute top-4 left-4 text-xs font-semibold px-3 py-1.5 rounded-full bg-primary/10 text-green-800 dark:bg-primary/20 dark:text-primary"
-            >
-              {{ product.badge }}
-            </span>
+          <div
+            class="w-full aspect-[4/5] md:aspect-square lg:aspect-[4/3] rounded-2xl overflow-hidden bg-surface-light dark:bg-surface-dark relative"
+          >
+            <img :src="product.image" :alt="product.imageAlt" class="w-full h-full object-cover" />
           </div>
 
           <!-- Thumbnails -->
-          <div v-if="product.images.length > 1" class="grid grid-cols-3 gap-3">
+          <div v-if="product.images.length >= 1" class="grid grid-cols-3 gap-3">
             <button
               v-for="(img, i) in product.images"
               :key="i"
               class="aspect-square rounded-xl overflow-hidden border-2 transition-all duration-200"
-              :class="activeImage === i ? 'border-primary' : 'border-transparent hover:border-border-soft dark:hover:border-white/20'"
+              :class="
+                activeImage === i
+                  ? 'border-primary'
+                  : 'border-transparent hover:border-border-soft dark:hover:border-white/20'
+              "
               @click="activeImage = i"
             >
-              <img :src="img" :alt="`${product.name} view ${i + 1}`" class="w-full h-full object-cover" />
+              <img
+                :src="img.url"
+                :alt="`${img.alt} view ${i + 1}`"
+                class="w-full h-full object-cover"
+              />
             </button>
           </div>
         </div>
