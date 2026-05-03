@@ -1,9 +1,17 @@
 <script setup lang="ts">
 const { t } = useI18n()
-const localePath = useLocalePath()
+
 const route = useRoute()
-const mobileOpen = ref(false)
+
 const cart = useCartStore()
+
+const colorMode = useColorMode()
+
+const localePath = useLocalePath()
+
+const mobileOpen = ref<boolean>(false)
+
+const appLogoMode = computed(() => (colorMode.value === 'dark' ? 'light' : 'dark'))
 
 const navLinks = computed(() => [
   { key: 'nav.shop', path: '/shop' },
@@ -11,7 +19,8 @@ const navLinks = computed(() => [
   { key: 'nav.howItWorks', path: '/how-it-works' },
 ])
 
-const isActive = (path: string) => route.path === localePath(path) || route.path.startsWith(localePath(path) + '/')
+const isActive = (path: string) =>
+  route.path === localePath(path) || route.path.startsWith(localePath(path) + '/')
 </script>
 
 <template>
@@ -22,7 +31,7 @@ const isActive = (path: string) => route.path === localePath(path) || route.path
     <div class="flex items-center justify-between h-full px-4 md:px-10 lg:px-16 container mx-auto">
       <!-- Logo -->
       <NuxtLink :to="localePath('/')" class="flex-shrink-0" @click="mobileOpen = false">
-        <AppLogo />
+        <AppLogo :mode="appLogoMode" />
       </NuxtLink>
 
       <!-- Desktop nav -->
@@ -61,7 +70,8 @@ const isActive = (path: string) => route.path === localePath(path) || route.path
           <span
             v-if="cart.count > 0"
             class="absolute top-1 right-1 min-w-[16px] h-4 px-0.5 flex items-center justify-center bg-primary text-background-dark text-[10px] font-bold rounded-full leading-none"
-          >{{ cart.count }}</span>
+            >{{ cart.count }}</span
+          >
         </NuxtLink>
 
         <!-- User -->
@@ -79,7 +89,9 @@ const isActive = (path: string) => route.path === localePath(path) || route.path
           :aria-label="mobileOpen ? 'Close menu' : 'Open menu'"
           @click="mobileOpen = !mobileOpen"
         >
-          <span class="material-symbols-outlined text-[22px]">{{ mobileOpen ? 'close' : 'menu' }}</span>
+          <span class="material-symbols-outlined text-[22px]">{{
+            mobileOpen ? 'close' : 'menu'
+          }}</span>
         </button>
       </div>
     </div>
@@ -103,7 +115,11 @@ const isActive = (path: string) => route.path === localePath(path) || route.path
             :key="link.key"
             :to="localePath(link.path)"
             class="px-3 py-2.5 rounded-lg text-sm font-medium transition-colors duration-200 hover:bg-background-light dark:hover:bg-surface-dark"
-            :class="isActive(link.path) ? 'text-primary bg-background-light dark:bg-surface-dark' : 'text-text-main dark:text-white/80'"
+            :class="
+              isActive(link.path)
+                ? 'text-primary bg-background-light dark:bg-surface-dark'
+                : 'text-text-main dark:text-white/80'
+            "
             @click="mobileOpen = false"
           >
             {{ t(link.key) }}

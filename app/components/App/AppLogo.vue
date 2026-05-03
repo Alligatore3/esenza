@@ -1,3 +1,11 @@
+<script lang="ts" setup>
+const { mode = 'light' } = defineProps<{ mode?: 'dark' | 'light' }>()
+</script>
+
 <template>
-  <img src="/images/logo.png" alt="èSenza Japan logo" class="w-14 h-auto object-contain"/>
+  <img
+    class="w-14 h-auto object-contain"
+    :src="`/images/logo-${mode}.png`"
+    alt="èSenza Japan logo"
+  />
 </template>

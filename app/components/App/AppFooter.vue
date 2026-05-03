@@ -1,6 +1,8 @@
 <script setup lang="ts">
 const { t } = useI18n()
+
 const localePath = useLocalePath()
+
 const email = ref('')
 </script>
 
@@ -43,22 +45,34 @@ const email = ref('')
           </h3>
           <ul class="space-y-2.5">
             <li>
-              <NuxtLink :to="localePath('/about')" class="text-white/70 hover:text-primary text-sm transition-colors duration-200">
+              <NuxtLink
+                :to="localePath('/about')"
+                class="text-white/70 hover:text-primary text-sm transition-colors duration-200"
+              >
                 {{ t('footer.about') }}
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink :to="localePath('/about')" class="text-white/70 hover:text-primary text-sm transition-colors duration-200">
+              <NuxtLink
+                :to="localePath('/about')"
+                class="text-white/70 hover:text-primary text-sm transition-colors duration-200"
+              >
                 {{ t('footer.sustainability') }}
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink :to="localePath('/')" class="text-white/70 hover:text-primary text-sm transition-colors duration-200">
+              <NuxtLink
+                :to="localePath('/')"
+                class="text-white/70 hover:text-primary text-sm transition-colors duration-200"
+              >
                 {{ t('footer.journal') }}
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink :to="localePath('/')" class="text-white/70 hover:text-primary text-sm transition-colors duration-200">
+              <NuxtLink
+                :to="localePath('/')"
+                class="text-white/70 hover:text-primary text-sm transition-colors duration-200"
+              >
                 {{ t('footer.contact') }}
               </NuxtLink>
             </li>
@@ -88,13 +102,25 @@ const email = ref('')
       </div>
 
       <!-- Bottom row -->
-      <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div
+        class="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4"
+      >
         <p class="text-white/40 text-xs">{{ t('footer.copyright') }}</p>
         <div class="flex items-center gap-4">
-          <a target="_blank" rel="noopener" href="/pdf/eSenza_PrivacyPolicy.pdf" class="text-white/40 hover:text-white/70 text-xs transition-colors duration-200">
+          <a
+            target="_blank"
+            rel="noopener"
+            href="/pdf/eSenza_PrivacyPolicy.pdf"
+            class="text-white/40 hover:text-white/70 text-xs transition-colors duration-200"
+          >
             {{ t('footer.privacy') }}
           </a>
-          <a target="_blank" rel="noopener" href="/pdf/eSenza_TermsOfService.pdf" class="text-white/40 hover:text-white/70 text-xs transition-colors duration-200">
+          <a
+            target="_blank"
+            rel="noopener"
+            href="/pdf/eSenza_TermsOfService.pdf"
+            class="text-white/40 hover:text-white/70 text-xs transition-colors duration-200"
+          >
             {{ t('footer.terms') }}
           </a>
         </div>
