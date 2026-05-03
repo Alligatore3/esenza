@@ -1,10 +1,14 @@
 <script setup lang="ts">
 const { t } = useI18n()
-const localePath = useLocalePath()
+
 const route = useRoute()
+
+const localePath = useLocalePath()
+
 const { products, getBySlug } = useProducts()
 
 const slug = route.params.slug as string
+
 const product = computed(() => getBySlug(slug))
 
 // Throw 404 only once products have actually loaded — otherwise we'd 404
@@ -14,8 +18,6 @@ watchEffect(() => {
     throw createError({ statusCode: 404, statusMessage: 'Product not found' })
   }
 })
-
-const activeImage = ref(0)
 
 useSeoMeta({
   title: () => (product.value ? `${product.value.name} — èSenza Japan` : 'èSenza Japan'),
@@ -47,36 +49,7 @@ useSeoMeta({
 
       <!-- Main grid -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-        <!-- Left: Image gallery (7 cols) -->
-        <div class="lg:col-span-7 flex flex-col gap-4 lg:sticky lg:top-28">
-          <!-- Main image -->
-          <div
-            class="w-full aspect-[4/5] md:aspect-square lg:aspect-[4/3] rounded-2xl overflow-hidden bg-surface-light dark:bg-surface-dark relative"
-          >
-            <img :src="product.image" :alt="product.imageAlt" class="w-full h-full object-cover" />
-          </div>
-
-          <!-- Thumbnails -->
-          <div v-if="product.images.length >= 1" class="grid grid-cols-3 gap-3">
-            <button
-              v-for="(img, i) in product.images"
-              :key="i"
-              class="aspect-square rounded-xl overflow-hidden border-2 transition-all duration-200"
-              :class="
-                activeImage === i
-                  ? 'border-primary'
-                  : 'border-transparent hover:border-border-soft dark:hover:border-white/20'
-              "
-              @click="activeImage = i"
-            >
-              <img
-                :src="img.url"
-                :alt="`${img.alt} view ${i + 1}`"
-                class="w-full h-full object-cover"
-              />
-            </button>
-          </div>
-        </div>
+        <ProductDetailImageWithGallery :product="product" />
 
         <!-- Right: Product detail (5 cols) -->
         <div class="lg:col-span-5">
