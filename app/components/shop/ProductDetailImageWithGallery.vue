@@ -17,12 +17,14 @@ const defaultImage = computed<ProductImage>(() => ({
 
 const currentPrimaryImage = ref<ProductImage>(defaultImage.value)
 
-const galleryImages = computed<ProductImage[]>(() =>
-  [defaultImage.value, ...props.product.images].map((value) => ({
-    ...value,
+const galleryImages = computed<ProductImage[]>(() => [
+  defaultImage.value,
+  ...props.product.images.map(({ url, alt }) => ({
     index: crypto.randomUUID(),
+    url,
+    alt,
   })),
-)
+])
 
 const changeImage = (image: ProductImage) => {
   currentPrimaryImage.value = image
@@ -49,19 +51,15 @@ const changeImage = (image: ProductImage) => {
       <button
         v-for="image in galleryImages"
         :key="image.index"
-        @click.prevent="() => changeImage(image)"
         class="aspect-square rounded-xl overflow-hidden border-2 transition-all duration-200"
         :class="
           activeImage === image.index
             ? 'border-primary'
             : 'border-transparent hover:border-border-soft dark:hover:border-white/20'
         "
+        @click.prevent="() => changeImage(image)"
       >
-        <img
-          :src="image.url"
-          :alt="`${image.alt} view ${i + 1}`"
-          class="w-full h-full object-cover"
-        />
+        <img :src="image.url" :alt="image.alt ?? ''" class="w-full h-full object-cover" />
       </button>
     </div>
   </div>
