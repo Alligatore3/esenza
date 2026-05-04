@@ -32,6 +32,7 @@ const PRODUCTS_QUERY = `
       tips(locale: $locale) { value }
       primaryimage { url alt }
       galleryimages { url alt }
+      price
     }
   }
 `
@@ -142,14 +143,14 @@ const dastToHtml = (dast: unknown): string => {
 }
 
 const mapProduct = (raw: Record<string, any>): Product => {
+  const images: { url: string; alt: string | null }[] = raw.galleryimages ?? []
+  const howToPrepare = dastToHtml(raw.howtoprepare?.value)
+  const description = dastToHtml(raw.description?.value)
+  const tips = dastToHtml(raw.tips?.value)
+  const subTitle = raw.subtitle ?? ''
   const title = raw.title ?? ''
   const slugSource = raw.slugTitle ?? title
-  const subTitle = raw.subtitle ?? ''
-  const description = dastToHtml(raw.description?.value)
-  const howToPrepare = dastToHtml(raw.howtoprepare?.value)
-  const tips = dastToHtml(raw.tips?.value)
-
-  const images: { url: string; alt: string | null }[] = raw.galleryimages ?? []
+  const price = raw.price ?? 0
 
   return {
     imageAlt: raw.primaryimage?.alt ?? title,
@@ -159,8 +160,8 @@ const mapProduct = (raw: Record<string, any>): Product => {
     name: title,
     description,
     subTitle,
-    price: 0,
     images,
+    price,
     tips,
   }
 }
