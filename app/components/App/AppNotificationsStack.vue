@@ -20,6 +20,14 @@ const positionClasses: Record<NotificationPosition, string> = {
   'top-left': 'top-4 left-4 items-start',
 }
 
+const isTop = (position: NotificationPosition) => position.startsWith('top')
+
+const enterFromClass = (position: NotificationPosition) =>
+  isTop(position) ? 'opacity-0 -translate-y-2' : 'opacity-0 translate-y-2'
+
+const leaveToClass = (position: NotificationPosition) =>
+  isTop(position) ? 'opacity-0 -translate-y-2' : 'opacity-0 translate-y-2'
+
 const stateClasses: Record<Notification['state'], string> = {
   success:
     'bg-emerald-50 text-emerald-900 border-emerald-200 dark:bg-emerald-950/60 dark:text-emerald-100 dark:border-emerald-800',
@@ -40,8 +48,15 @@ const stateIcons: Record<Notification['state'], string> = {
 
 <template>
   <template v-for="(list, position) in store.byPosition" :key="position">
-    <div
+    <TransitionGroup
       v-if="list.length"
+      tag="div"
+      enter-active-class="transition-all duration-300 ease-out"
+      :enter-from-class="enterFromClass(position)"
+      enter-to-class="opacity-100 translate-y-0"
+      leave-active-class="transition-all duration-200 ease-in absolute"
+      leave-from-class="opacity-100 translate-y-0"
+      :leave-to-class="leaveToClass(position)"
       :class="['fixed z-[60] flex flex-col gap-2 pointer-events-none', positionClasses[position]]"
     >
       <div
@@ -66,6 +81,6 @@ const stateIcons: Record<Notification['state'], string> = {
           <span class="material-symbols-outlined text-[18px]">close</span>
         </button>
       </div>
-    </div>
+    </TransitionGroup>
   </template>
 </template>

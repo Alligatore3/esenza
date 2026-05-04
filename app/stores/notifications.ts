@@ -8,6 +8,7 @@ import type {
 } from '~/types/notification'
 
 const DEFAULT_POSITION: NotificationPosition = 'top-right'
+const DEFAULT_TIMEOUT = 5000
 
 const POSITIONS: NotificationPosition[] = ['top-right', 'top-left', 'bottom-right', 'bottom-left']
 
@@ -15,6 +16,16 @@ const generateId = () => globalThis.crypto?.randomUUID?.() ?? `n-${Date.now()}-$
 
 export const useNotificationsStore = defineStore('notifications', () => {
   const items = ref<Notification[]>([])
+  const timers = new Map<string, ReturnType<typeof setTimeout>>()
+
+  const remove = (id: string) => {
+    const handle = timers.get(id)
+    if (handle !== undefined) {
+      clearTimeout(handle)
+      timers.delete(id)
+    }
+    items.value = items.value.filter((n) => n.id !== id)
+  }
 
   function add(
     state: NotificationState,
@@ -34,14 +45,20 @@ export const useNotificationsStore = defineStore('notifications', () => {
       position: options.position ?? DEFAULT_POSITION,
     })
 
+    const timeout = options.timeout ?? DEFAULT_TIMEOUT
+    if (timeout > 0) {
+      timers.set(
+        id,
+        setTimeout(() => remove(id), timeout),
+      )
+    }
+
     return id
   }
 
-  const remove = (id: string) => {
-    items.value = items.value.filter((n) => n.id !== id)
-  }
-
   const clear = () => {
+    for (const handle of timers.values()) clearTimeout(handle)
+    timers.clear()
     items.value = []
   }
 

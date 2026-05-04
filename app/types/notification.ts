@@ -20,4 +20,5 @@ export interface Notification {
 export interface AddNotificationOptions {
   position?: NotificationPosition
   id?: string
+  timeout?: number
 }
