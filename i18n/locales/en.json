@@ -199,6 +199,7 @@
     "yen": "¥"
   },
   "cart": {
+    "productAdded": "Product added to the cart",
     "title": "Your Cart",
     "empty": "Your cart is empty",
     "orderSummary": "Order Summary",
