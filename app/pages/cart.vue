@@ -1,20 +1,24 @@
 <script setup lang="ts">
-const { t, locale } = useI18n()
-const localePath = useLocalePath()
 const cart = useCartStore()
 
+const { t, locale } = useI18n()
+
+const localePath = useLocalePath()
+
+const notificationsStore = useNotificationsStore()
+
 const loading = ref(false)
-const error = ref<string | null>(null)
 
 useSeoMeta({
   title: 'Cart — èSenza Japan',
 })
 
 async function proceedToCheckout() {
-  if (cart.items.length === 0) return
+  if (cart.items.length === 0) {
+    return
+  }
 
   loading.value = true
-  error.value = null
 
   try {
     const { url } = await $fetch<{ url: string }>('/api/checkout', {
@@ -29,9 +33,13 @@ async function proceedToCheckout() {
         })),
       },
     })
+
     window.location.href = url
   } catch {
-    error.value = t('cart.checkoutError')
+    notificationsStore.add('error', t('cart.checkoutError'), {
+      position: 'top-right',
+    })
+
     loading.value = false
   }
 }
@@ -116,8 +124,6 @@ async function proceedToCheckout() {
                 >¥{{ cart.total.toLocaleString() }}</span
               >
             </div>
-
-            <p v-if="error" class="mt-3 text-xs text-red-500">{{ error }}</p>
 
             <button
               class="w-full mt-6 py-4 bg-primary hover:bg-primary-dark text-background-dark font-bold text-sm rounded-xl flex items-center justify-center gap-2 transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed"

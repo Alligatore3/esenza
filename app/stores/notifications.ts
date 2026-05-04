@@ -7,8 +7,9 @@ import type {
   NotificationState,
 } from '~/types/notification'
 
+const DEFAULT_TIMEOUT = 2000
+
 const DEFAULT_POSITION: NotificationPosition = 'top-right'
-const DEFAULT_TIMEOUT = 5000
 
 const POSITIONS: NotificationPosition[] = ['top-right', 'top-left', 'bottom-right', 'bottom-left']
 
