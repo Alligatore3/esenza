@@ -213,6 +213,9 @@
     "secureNote": "Secure checkout powered by Stripe",
     "checkoutError": "Something went wrong. Please try again."
   },
+  "notifications": {
+    "close": "Close notification"
+  },
   "checkout": {
     "success": {
       "title": "Order Confirmed!",

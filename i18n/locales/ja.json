@@ -213,6 +213,9 @@
     "secureNote": "Stripeによる安全な決済",
     "checkoutError": "エラーが発生しました。もう一度お試しください。"
   },
+  "notifications": {
+    "close": "通知を閉じる"
+  },
   "checkout": {
     "success": {
       "title": "ご注文が確定しました！",
