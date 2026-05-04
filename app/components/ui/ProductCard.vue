@@ -6,11 +6,23 @@ const props = defineProps<{
   variant?: 'simple' | 'full'
 }>()
 
-const localePath = useLocalePath()
+const { t } = useI18n()
 
 const cart = useCartStore()
 
+const localePath = useLocalePath()
+
+const notificationsStore = useNotificationsStore()
+
 const formattedPrice = computed(() => `¥${props.product.price.toLocaleString()}`)
+
+const addToProduct = (product: Product) => {
+  cart.add(product)
+
+  notificationsStore.add('success', t('cart.productAdded'), {
+    position: 'top-right',
+  })
+}
 </script>
 
 <template>
@@ -31,7 +43,7 @@ const formattedPrice = computed(() => `¥${props.product.price.toLocaleString()}
       <!-- Add to cart hover overlay -->
       <button
         class="absolute bottom-3 left-3 right-3 py-2.5 bg-background-dark/90 hover:bg-primary text-white hover:text-background-dark text-sm font-semibold rounded-xl opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300"
-        @click.prevent="cart.add(product)"
+        @click.prevent="() => addToProduct(product)"
       >
         <span class="material-symbols-outlined text-[18px] align-middle mr-1"
           >add_shopping_cart</span

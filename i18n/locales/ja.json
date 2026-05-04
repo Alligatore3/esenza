@@ -199,6 +199,7 @@
     "yen": "¥"
   },
   "cart": {
+    "productAdded": "商品がカートに追加されました",
     "title": "カート",
     "empty": "カートは空です",
     "orderSummary": "注文概要",
@@ -212,6 +213,9 @@
     "backToCart": "カートへ戻る",
     "secureNote": "Stripeによる安全な決済",
     "checkoutError": "エラーが発生しました。もう一度お試しください。"
+  },
+  "notifications": {
+    "close": "通知を閉じる"
   },
   "checkout": {
     "success": {

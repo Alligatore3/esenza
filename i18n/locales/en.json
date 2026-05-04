@@ -199,6 +199,7 @@
     "yen": "¥"
   },
   "cart": {
+    "productAdded": "Product added to the cart",
     "title": "Your Cart",
     "empty": "Your cart is empty",
     "orderSummary": "Order Summary",
@@ -212,6 +213,9 @@
     "backToCart": "Back to Cart",
     "secureNote": "Secure checkout powered by Stripe",
     "checkoutError": "Something went wrong. Please try again."
+  },
+  "notifications": {
+    "close": "Close notification"
   },
   "checkout": {
     "success": {

@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import type { Product } from '~/types/product'
 
+const props = defineProps<{ product: Product }>()
+
+const quantity = ref(1)
+
 const { t } = useI18n()
 
 const cart = useCartStore()
 
-const props = defineProps<{ product: Product }>()
-
-const quantity = ref(1)
+const notificationsStore = useNotificationsStore()
 
 const activeTab = ref<'tips' | 'nutrition' | 'reviews'>('tips')
 
@@ -21,7 +23,13 @@ const decrement = () => {
   if (quantity.value > 1) quantity.value--
 }
 
-const addToCart = () => cart.add(props.product, quantity.value)
+const addToCart = () => {
+  cart.add(props.product, quantity.value)
+
+  notificationsStore.add('success', t('cart.productAdded'), {
+    position: 'top-right',
+  })
+}
 </script>
 
 <template>

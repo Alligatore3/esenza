@@ -1,164 +1,86 @@
+<script setup lang="ts">
+import type { Notification, NotificationPosition } from '~/types/notification'
+
+const { t, te } = useI18n()
+
+const store = useNotificationsStore()
+
+function renderMessage(n: Notification): string {
+  if (typeof n.message === 'string') {
+    return n.message
+  }
+
+  return te(n.message.key) ? t(n.message.key, n.message.params ?? {}) : n.message.key
+}
+
+const positionClasses: Record<NotificationPosition, string> = {
+  'bottom-right': 'bottom-4 right-4 items-end',
+  'bottom-left': 'bottom-4 left-4 items-start',
+  'top-right': 'top-4 right-4 items-end',
+  'top-left': 'top-4 left-4 items-start',
+}
+
+const isTop = (position: NotificationPosition) => position.startsWith('top')
+
+const enterFromClass = (position: NotificationPosition) =>
+  isTop(position) ? 'opacity-0 -translate-y-2' : 'opacity-0 translate-y-2'
+
+const leaveToClass = (position: NotificationPosition) =>
+  isTop(position) ? 'opacity-0 -translate-y-2' : 'opacity-0 translate-y-2'
+
+const stateClasses: Record<Notification['state'], string> = {
+  success:
+    'bg-emerald-50 text-emerald-900 border-emerald-200 dark:bg-emerald-950/60 dark:text-emerald-100 dark:border-emerald-800',
+  error:
+    'bg-red-50 text-red-900 border-red-200 dark:bg-red-950/60 dark:text-red-100 dark:border-red-800',
+  warning:
+    'bg-amber-50 text-amber-900 border-amber-200 dark:bg-amber-950/60 dark:text-amber-100 dark:border-amber-800',
+  info: 'bg-sky-50 text-sky-900 border-sky-200 dark:bg-sky-950/60 dark:text-sky-100 dark:border-sky-800',
+}
+
+const stateIcons: Record<Notification['state'], string> = {
+  success: 'check_circle',
+  warning: 'warning',
+  error: 'error',
+  info: 'info',
+}
+</script>
+
 <template>
-  <div
-    id="toast-success"
-    class="flex items-center w-full max-w-sm p-4 text-body bg-neutral-primary-soft rounded-base shadow-xs border border-default"
-    role="alert"
-  >
-    <div
-      class="inline-flex items-center justify-center shrink-0 w-7 h-7 text-fg-success bg-success-soft rounded"
+  <template v-for="(list, position) in store.byPosition" :key="position">
+    <TransitionGroup
+      v-if="list.length"
+      tag="div"
+      enter-active-class="transition-all duration-300 ease-out"
+      :enter-from-class="enterFromClass(position)"
+      enter-to-class="opacity-100 translate-y-0"
+      leave-active-class="transition-all duration-200 ease-in absolute"
+      leave-from-class="opacity-100 translate-y-0"
+      :leave-to-class="leaveToClass(position)"
+      :class="['fixed z-[60] flex flex-col gap-2 pointer-events-none', positionClasses[position]]"
     >
-      <svg
-        class="w-5 h-5"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        fill="none"
-        viewBox="0 0 24 24"
+      <div
+        v-for="n in list"
+        :key="n.id"
+        :class="[
+          'pointer-events-auto flex items-center gap-3 min-w-[280px] max-w-sm rounded-xl border px-4 py-3 shadow-lg',
+          stateClasses[n.state],
+        ]"
+        role="status"
       >
-        <path
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M5 11.917 9.724 16.5 19 7.5"
-        />
-      </svg>
-      <span class="sr-only">Check icon</span>
-    </div>
-    <div class="ms-3 text-sm font-normal">Item moved successfully.</div>
-    <button
-      type="button"
-      class="ms-auto flex items-center justify-center text-body hover:text-heading bg-transparent box-border border border-transparent hover:bg-neutral-secondary-medium focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded text-sm h-8 w-8 focus:outline-none"
-      data-dismiss-target="#toast-success"
-      aria-label="Close"
-    >
-      <span class="sr-only">Close</span>
-      <svg
-        class="w-5 h-5"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        fill="none"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M6 18 17.94 6M18 18 6.06 6"
-        />
-      </svg>
-    </button>
-  </div>
-  <div
-    id="toast-danger"
-    class="flex items-center w-full max-w-sm p-4 text-body bg-neutral-primary-soft rounded-base shadow-xs border border-default"
-    role="alert"
-  >
-    <div
-      class="inline-flex items-center justify-center shrink-0 w-7 h-7 text-fg-danger bg-danger-soft rounded"
-    >
-      <svg
-        class="w-5 h-5"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        fill="none"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M6 18 17.94 6M18 18 6.06 6"
-        />
-      </svg>
-      <span class="sr-only">Error icon</span>
-    </div>
-    <div class="ms-3 text-sm font-normal">Item has been deleted.</div>
-    <button
-      type="button"
-      class="ms-auto flex items-center justify-center text-body hover:text-heading bg-transparent box-border border border-transparent hover:bg-neutral-secondary-medium focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded text-sm h-8 w-8 focus:outline-none"
-      data-dismiss-target="#toast-danger"
-      aria-label="Close"
-    >
-      <span class="sr-only">Close</span>
-      <svg
-        class="w-5 h-5"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        fill="none"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M6 18 17.94 6M18 18 6.06 6"
-        />
-      </svg>
-    </button>
-  </div>
-  <div
-    id="toast-warning"
-    class="flex items-center w-full max-w-sm p-4 text-body bg-neutral-primary-soft rounded-base shadow-xs border border-default"
-    role="alert"
-  >
-    <div
-      class="inline-flex items-center justify-center shrink-0 w-7 h-7 text-fg-warning bg-warning-soft rounded"
-    >
-      <svg
-        class="w-5 h-5"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        fill="none"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M12 13V8m0 8h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-        />
-      </svg>
-      <span class="sr-only">Warning icon</span>
-    </div>
-    <div class="ms-3 text-sm font-normal">Improve password difficulty.</div>
-    <button
-      type="button"
-      class="ms-auto flex items-center justify-center text-body hover:text-heading bg-transparent box-border border border-transparent hover:bg-neutral-secondary-medium focus:ring-4 focus:ring-neutral-tertiary font-medium leading-5 rounded text-sm h-8 w-8 focus:outline-none"
-      data-dismiss-target="#toast-warning"
-      aria-label="Close"
-    >
-      <span class="sr-only">Close</span>
-      <svg
-        class="w-5 h-5"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        fill="none"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M6 18 17.94 6M18 18 6.06 6"
-        />
-      </svg>
-    </button>
-  </div>
+        <span class="material-symbols-outlined text-[20px] shrink-0">
+          {{ stateIcons[n.state] }}
+        </span>
+        <p class="text-sm font-medium leading-snug grow">{{ renderMessage(n) }}</p>
+        <button
+          class="w-[18px] h-[18px] shrink-0 rounded-md opacity-70 hover:opacity-100 transition-opacity"
+          :aria-label="t('notifications.close')"
+          type="button"
+          @click="store.remove(n.id)"
+        >
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+    </TransitionGroup>
+  </template>
 </template>
