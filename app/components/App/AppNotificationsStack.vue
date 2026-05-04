@@ -75,8 +75,8 @@ const stateIcons: Record<Notification['state'], string> = {
         <button
           class="w-[18px] h-[18px] shrink-0 rounded-md opacity-70 hover:opacity-100 transition-opacity"
           :aria-label="t('notifications.close')"
-          @click="store.remove(n.id)"
           type="button"
+          @click="store.remove(n.id)"
         >
           <span class="material-symbols-outlined text-[18px]">close</span>
         </button>
