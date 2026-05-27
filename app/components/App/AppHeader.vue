@@ -54,7 +54,7 @@ const isActive = (path: string) =>
 
         <!-- Search -->
         <button
-          class="p-2 rounded-lg text-text-main dark:text-white/80 hover:bg-background-light dark:hover:bg-surface-dark transition-colors"
+          class="hidden p-2 rounded-lg text-text-main dark:text-white/80 hover:bg-background-light dark:hover:bg-surface-dark transition-colors"
           :aria-label="t('nav.search')"
         >
           <span class="material-symbols-outlined text-[22px]">search</span>
@@ -63,7 +63,7 @@ const isActive = (path: string) =>
         <!-- Cart -->
         <NuxtLink
           :to="localePath('/cart')"
-          class="p-2 rounded-lg text-text-main dark:text-white/80 hover:bg-background-light dark:hover:bg-surface-dark transition-colors relative"
+          class="hidden p-2 rounded-lg text-text-main dark:text-white/80 hover:bg-background-light dark:hover:bg-surface-dark transition-colors relative"
           :aria-label="t('nav.cart')"
         >
           <span class="material-symbols-outlined text-[22px]">shopping_bag</span>
@@ -76,7 +76,7 @@ const isActive = (path: string) =>
 
         <!-- User -->
         <button
-          class="hidden md:flex p-2 rounded-lg text-text-main dark:text-white/80 hover:bg-background-light dark:hover:bg-surface-dark transition-colors"
+          class="hidden p-2 rounded-lg text-text-main dark:text-white/80 hover:bg-background-light dark:hover:bg-surface-dark transition-colors"
         >
           <span class="material-symbols-outlined text-[22px]">person</span>
         </button>
@@ -85,7 +85,7 @@ const isActive = (path: string) =>
 
         <!-- Hamburger -->
         <button
-          class="md:hidden p-2 rounded-lg text-text-main dark:text-white/80 hover:bg-background-light dark:hover:bg-surface-dark transition-colors"
+          class="md:hidden leading-none p-2 rounded-lg text-text-main dark:text-white/80 hover:bg-background-light dark:hover:bg-surface-dark transition-colors"
           :aria-label="mobileOpen ? 'Close menu' : 'Open menu'"
           @click="mobileOpen = !mobileOpen"
         >

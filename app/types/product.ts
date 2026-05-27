@@ -3,6 +3,7 @@ export interface Product {
   name: string
   subTitle: string
   price: number
+  amazonLink: string
   image: string
   images: { url: string; alt: string | null }[]
   imageAlt: string

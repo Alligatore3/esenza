@@ -61,7 +61,7 @@ const addToCart = () => {
     />
 
     <!-- Quantity + Add to Cart -->
-    <div class="flex flex-col gap-3">
+    <div class="flex flex-col gap-3 hidden">
       <!-- Quantity selector -->
       <div class="flex items-center gap-3">
         <span class="text-sm font-medium text-text-main dark:text-white/80 w-16">Qty</span>
@@ -94,6 +94,16 @@ const addToCart = () => {
         <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
         {{ t('product.addToCart') }}
       </button>
+    </div>
+
+    <div class="flex flex-col gap-3">
+      <a
+        class="w-full py-4 bg-primary hover:bg-primary-dark text-background-dark font-bold text-sm rounded-xl flex items-center justify-center gap-2 transition-colors duration-200"
+        :href="product.amazonLink"
+        target="_blank"
+      >
+        {{ t('product.buyOnAmazon') }}
+      </a>
     </div>
 
     <!-- How to prepare -->

@@ -9,7 +9,7 @@ function toggle() {
 <template>
   <ClientOnly>
     <button
-      class="p-2 rounded-lg text-text-main dark:text-white/80 hover:bg-background-light dark:hover:bg-surface-dark transition-colors"
+      class="p-2 leading-none rounded-lg text-text-main dark:text-white/80 hover:bg-background-light dark:hover:bg-surface-dark transition-colors"
       :aria-label="colorMode.value === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
       @click="toggle"
     >

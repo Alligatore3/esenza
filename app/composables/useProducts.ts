@@ -26,6 +26,7 @@ const PRODUCTS_QUERY = `
       id
       slugTitle: title(locale: en)
       title(locale: $locale)
+      amazon(locale: $locale)
       subtitle(locale: $locale)
       description(locale: $locale) { value }
       howtoprepare(locale: $locale) { value }
@@ -149,6 +150,7 @@ const mapProduct = (raw: Record<string, any>): Product => {
   const tips = dastToHtml(raw.tips?.value)
   const subTitle = raw.subtitle ?? ''
   const title = raw.title ?? ''
+  const amazonLink = raw.amazon ?? ''
   const slugSource = raw.slugTitle ?? title
   const price = raw.price ?? 0
 
@@ -159,6 +161,7 @@ const mapProduct = (raw: Record<string, any>): Product => {
     howToPrepare,
     name: title,
     description,
+    amazonLink,
     subTitle,
     images,
     price,
