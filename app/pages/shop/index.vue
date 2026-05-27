@@ -4,7 +4,17 @@ const { t } = useI18n()
 const { products } = useProducts()
 
 const activeFilter = ref('all')
+
 const searchQuery = ref('')
+
+const onCardEnter = (el: Element) => {
+  const i = parseInt((el as HTMLElement).dataset.index ?? '0')
+  ;(el as HTMLElement).style.transitionDelay = `${i * 50}ms`
+}
+
+const onCardLeave = (el: Element) => {
+  ;(el as HTMLElement).style.transitionDelay = '0ms'
+}
 
 const filteredProducts = computed(() => {
   const querySearch = searchQuery.value.trim()
@@ -47,9 +57,21 @@ useSeoMeta({
       class="w-full py-12 px-4 md:px-10 lg:px-16 bg-background-light dark:bg-background-dark"
     >
       <div class="max-w-wide mx-auto">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <ProductCard v-for="p in filteredProducts" :key="p.slug" :product="p" variant="full" />
-        </div>
+        <TransitionGroup
+          tag="div"
+          name="product"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          @enter="onCardEnter"
+          @leave="onCardLeave"
+        >
+          <ProductCard
+            v-for="(p, i) in filteredProducts"
+            :key="p.slug"
+            :data-index="i"
+            :product="p"
+            variant="full"
+          />
+        </TransitionGroup>
 
         <div v-if="filteredProducts.length === 0" class="text-center py-12">
           <p>
@@ -66,3 +88,20 @@ useSeoMeta({
     />
   </div>
 </template>
+
+<style scoped>
+.product-enter-active,
+.product-leave-active {
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+.product-enter-from {
+  opacity: 0;
+  transform: translateY(16px);
+}
+.product-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+</style>
