@@ -126,6 +126,7 @@
     }
   },
   "shop": {
+    "searchProduct": "商品を検索する",
     "hero": {
       "title": "èSenzaのミックスを購入する",
       "titleJa": "イタリア発のプリミックス",
@@ -156,7 +157,7 @@
     },
     "taxNote": "税込",
     "addToCart": "カートに追加",
-    "buyOnAmazon": "Amazonで買う",
+    "buyOnAmazon": "Amazonで買う 🛒",
     "howToPrepare": "作り方",
     "howToPrepareJa": "ステップごとの説明",
     "sustainabilityTitle": "オーガニック原材料と責任ある包装",

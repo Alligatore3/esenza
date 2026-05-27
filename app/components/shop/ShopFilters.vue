@@ -8,6 +8,8 @@ defineProps<{
 
 const emit = defineEmits<{ 'filter-change': [filter: string] }>()
 
+const productSearchValue = ref('')
+
 const primaryFilters = [
   { key: 'all', labelKey: 'shop.filters.all', subKey: 'shop.filters.allJa' },
   { key: 'sweet', labelKey: 'shop.filters.sweet', subKey: 'shop.filters.sweetJa' },
@@ -29,7 +31,7 @@ const secondaryFilters = [
       class="max-w-wide mx-auto px-4 md:px-10 lg:px-16 py-3 flex items-center gap-3 overflow-x-auto no-scrollbar"
     >
       <!-- Primary filters -->
-      <div class="flex items-center gap-2 flex-shrink-0">
+      <div class="hidden flex items-center gap-2 flex-shrink-0">
         <button
           v-for="f in primaryFilters"
           :key="f.key"
@@ -46,11 +48,24 @@ const secondaryFilters = [
         </button>
       </div>
 
+      <div class="flex items-center gap-2 flex-shrink-0">
+        <span class="material-symbols-outlined text-[22px]">search</span>
+
+        <input
+          class="flex-1 w-64 bg-white dark:bg-surface-dark border border-border-soft dark:border-white/10 rounded-xl px-2 py-2 text-sm text-text-main dark:text-white placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+          :placeholder="t('shop.searchProduct')"
+          :value="productSearchValue"
+          type="email"
+        />
+      </div>
+
+      <div class="flex-1" />
+
       <!-- Divider -->
       <div class="w-px h-6 bg-border-soft dark:bg-white/10 flex-shrink-0 mx-1"></div>
 
       <!-- Secondary filters -->
-      <div class="flex items-center gap-2 flex-shrink-0">
+      <div class="hidden flex items-center gap-2 flex-shrink-0">
         <button
           v-for="f in secondaryFilters"
           :key="f.key"

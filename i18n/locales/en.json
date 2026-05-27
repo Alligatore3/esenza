@@ -126,6 +126,7 @@
     }
   },
   "shop": {
+    "searchProduct": "Search for a product",
     "hero": {
       "title": "Shop èSenza Mixes",
       "titleJa": "Prepared Mixes from Italy",
@@ -156,7 +157,7 @@
     },
     "taxNote": "Tax included",
     "addToCart": "Add to Cart",
-    "buyOnAmazon": "Buy on Amazon",
+    "buyOnAmazon": "Buy on Amazon 🛒",
     "howToPrepare": "How to prepare",
     "howToPrepareJa": "Step-by-step instructions",
     "sustainabilityTitle": "Organic Ingredients and Responsible Packaging",

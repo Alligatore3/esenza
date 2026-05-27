@@ -42,7 +42,7 @@ const addToProduct = (product: Product) => {
       />
       <!-- Add to cart hover overlay -->
       <button
-        class="absolute bottom-3 left-3 right-3 py-2.5 bg-background-dark/90 hover:bg-primary text-white hover:text-background-dark text-sm font-semibold rounded-xl opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300"
+        class="absolute hidden bottom-3 left-3 right-3 py-2.5 bg-background-dark/90 hover:bg-primary text-white hover:text-background-dark text-sm font-semibold rounded-xl opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300"
         @click.prevent="() => addToProduct(product)"
       >
         <span class="material-symbols-outlined text-[18px] align-middle mr-1"
