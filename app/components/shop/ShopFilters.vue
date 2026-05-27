@@ -6,7 +6,10 @@ defineProps<{
   productCount: number
 }>()
 
-const emit = defineEmits<{ 'filter-change': [filter: string] }>()
+const emit = defineEmits<{
+  'filter-change': [filter: string]
+  'search-change': [query: string]
+}>()
 
 const productSearchValue = ref('')
 
@@ -55,7 +58,13 @@ const secondaryFilters = [
           class="flex-1 w-64 bg-white dark:bg-surface-dark border border-border-soft dark:border-white/10 rounded-xl px-2 py-2 text-sm text-text-main dark:text-white placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary transition-all"
           :placeholder="t('shop.searchProduct')"
           :value="productSearchValue"
-          type="email"
+          type="text"
+          @input="
+            (e) => {
+              productSearchValue = (e.target as HTMLInputElement).value
+              emit('search-change', productSearchValue)
+            }
+          "
         />
       </div>
 

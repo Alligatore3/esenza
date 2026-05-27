@@ -229,11 +229,5 @@ export const useProducts = () => {
 
   const getBySlug = (slug: string): Product | undefined => getAll().find((p) => p.slug === slug)
 
-  // @todo: not working
-  const filterProducts = (): Product[] => {
-    const all = getAll()
-    return all
-  }
-
-  return { products, getAll, getFeatured, getBySlug, filterProducts }
+  return { products, getAll, getFeatured, getBySlug }
 }
