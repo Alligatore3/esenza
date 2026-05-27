@@ -13,6 +13,18 @@ const emit = defineEmits<{
 
 const productSearchValue = ref('')
 
+let searchDebounceTimer: ReturnType<typeof setTimeout> | null = null
+
+const onSearchInput = (e: Event) => {
+  productSearchValue.value = (e.target as HTMLInputElement).value
+
+  if (searchDebounceTimer) {
+    clearTimeout(searchDebounceTimer)
+  }
+
+  searchDebounceTimer = setTimeout(() => emit('search-change', productSearchValue.value), 200)
+}
+
 const primaryFilters = [
   { key: 'all', labelKey: 'shop.filters.all', subKey: 'shop.filters.allJa' },
   { key: 'sweet', labelKey: 'shop.filters.sweet', subKey: 'shop.filters.sweetJa' },
@@ -59,12 +71,7 @@ const secondaryFilters = [
           :placeholder="t('shop.searchProduct')"
           :value="productSearchValue"
           type="text"
-          @input="
-            (e) => {
-              productSearchValue = (e.target as HTMLInputElement).value
-              emit('search-change', productSearchValue)
-            }
-          "
+          @input="onSearchInput"
         />
       </div>
 
