@@ -126,6 +126,7 @@
     }
   },
   "shop": {
+    "emptySearch": "No results with this search, please try again",
     "searchProduct": "Search for a product",
     "hero": {
       "title": "Shop èSenza Mixes",

@@ -50,6 +50,13 @@ useSeoMeta({
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <ProductCard v-for="p in filteredProducts" :key="p.slug" :product="p" variant="full" />
         </div>
+
+        <div v-if="filteredProducts.length === 0" class="text-center py-12">
+          <p>
+            {{ t('shop.emptySearch') }}
+          </p>
+          <span class="material-symbols-outlined mt-2"> search_off </span>
+        </div>
       </div>
     </section>
 
