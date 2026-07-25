@@ -200,17 +200,21 @@ export const useProducts = () => {
           },
           body: JSON.stringify({ query: PRODUCTS_QUERY, variables: { locale: datoLocale.value } }),
         })
+
         if (res.errors?.length) {
           console.warn('[useProducts] DatoCMS GraphQL errors:', JSON.stringify(res.errors, null, 2))
           return DEFAULT_EMPTY_PRODUCTS
         }
+
         if (!res.data?.allProducts) {
           console.warn(
             '[useProducts] DatoCMS unexpected response shape:',
             JSON.stringify(res, null, 2),
           )
+
           return DEFAULT_EMPTY_PRODUCTS
         }
+
         return res.data.allProducts.map(mapProduct)
       } catch (err) {
         console.warn('[useProducts] DatoCMS fetch failed, falling back to static data:', err)
