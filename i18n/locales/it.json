@@ -1,0 +1,231 @@
+{
+  "nav": {
+    "shop": "Shop",
+    "about": "Chi siamo",
+    "howItWorks": "Come funziona",
+    "contact": "Contatti",
+    "journal": "Journal",
+    "search": "Cerca",
+    "cart": "Carrello"
+  },
+  "home": {
+    "hero": {
+      "badge": "Miscele Biologiche Italiane",
+      "title": "Dove nasce un progetto?",
+      "subtitle": "Un modo più consapevole di fare la spesa, nato a Schio e oggi arrivato fino in Giappone.",
+      "body": "èSenza nasce a Schio, in provincia di Vicenza, da un'idea semplice: promuovere una spesa più sostenibile attraverso la vendita di prodotti sfusi e la valorizzazione delle eccellenze dei piccoli produttori italiani. Oggi questa stessa filosofia prende vita nelle nostre miscele pronte, pensate per portare sulla tua tavola il gusto autentico della tradizione italiana in modo pratico, genuino e sostenibile.",
+      "cta": "Acquista ora",
+      "ctaSecondary": "La nostra storia",
+      "floatingBadgeLine1": "Zero Sprechi",
+      "floatingBadgeLine2": "Ingredienti Biologici"
+    },
+    "features": {
+      "title": "Senza sprechi. Senza eccessi. Con gusto autentico.",
+      "subtitle": "Una selezione guidata dalla trasparenza, da filiere chiare, dai piccoli produttori e da una particolare attenzione all’impatto ambientale."
+    },
+    "products": {
+      "title": "Miscele Pronte dall’Italia",
+      "subtitle": "Ricette in vasetto realizzate con ingredienti biologici certificati, pensate per una preparazione semplice a casa.",
+      "viewAll": "Scopri tutti i prodotti"
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "Fondata nel 2021",
+      "title": "La storia di èSenza",
+      "subtitle": "Un progetto di famiglia fondato sulla qualità, sulla cura e su scelte più consapevoli.",
+      "body": "èSenza nasce il 15 febbraio 2021 da un’idea di Ornella: creare un luogo in cui ogni prodotto potesse fare bene a chi lo acquista, riconoscere il giusto valore a chi lo produce e rispettare l’ambiente. Pochi mesi dopo, Martina entra a far parte del progetto, trasformandolo in un’attività di famiglia costruita giorno dopo giorno attraverso cura, dialogo e un profondo legame tra generazioni."
+    },
+    "mission": {
+      "title": "Buono per le persone, giusto per i produttori, rispettoso dell’ambiente",
+      "titleJa": "La nostra missione",
+      "body": "èSenza cresce attorno a una passione condivisa: la ricerca della qualità, il rispetto della stagionalità e il sostegno ai piccoli produttori artigianali, che spesso faticano a trovare il giusto spazio nella grande distribuzione. Per noi, raccontare le loro storie è importante quanto proporre i loro prodotti.",
+      "feature1Title": "Una selezione responsabile",
+      "feature1Sub": "Scegliamo ogni prodotto privilegiando trasparenza, qualità e filiere chiare e tracciabili.",
+      "feature2Title": "Una filosofia contro gli sprechi",
+      "feature2Sub": "Ogni giorno ci impegniamo a ridurre imballaggi, sprechi, inquinamento e forme di sfruttamento, promuovendo un modo di acquistare più attento e responsabile."
+    },
+    "origin": {
+      "title": "Eccoci qui",
+      "titleJa": "Le fondatrici",
+      "body": "Siamo Ornella e Martina, il cuore di èSenza. Il progetto nasce dal desiderio di Ornella di creare uno spazio dedicato ai piccoli produttori, alla stagionalità, alla cultura dello sfuso e a scelte di consumo più consapevoli. Martina si unisce pochi mesi dopo, lasciando il proprio lavoro per credere pienamente nel progetto e contribuire a trasformarlo in un’attività di famiglia con una visione ancora più ampia."
+    },
+    "philosophy": {
+      "title": "Fondatrici e visione",
+      "titleJa": "Ornella e Martina",
+      "card1Title": "Ornella",
+      "card1TitleJa": "Fondatrice",
+      "card1Body": "Profondamente legata alla semplicità, alla natura, alle letture serali e ai prodotti autentici, Ornella ha dato vita a èSenza con il desiderio di valorizzare i piccoli produttori e proporre un modo più consapevole di fare la spesa.",
+      "card2Title": "Martina",
+      "card2TitleJa": "Co-fondatrice",
+      "card2Body": "Martina entra nel progetto nel maggio 2021, scegliendo di lasciare il proprio lavoro precedente e diventare parte di èSenza in ogni senso. Il suo contributo ha permesso al progetto di evolvere in un’attività di famiglia fondata sulla cura, sul dialogo e sulla responsabilità condivisa.",
+      "card3Title": "Una visione condivisa",
+      "card3TitleJa": "Un futuro più consapevole",
+      "card3Body": "Insieme, Ornella e Martina desiderano che èSenza continui a essere un luogo in cui la qualità, la trasparenza, la sostenibilità e le relazioni umane vengano prima della velocità, dell’eccesso e del consumo impersonale."
+    },
+    "quote": {
+      "text": "Ci piace pensare che, attraverso il nostro lavoro, possiamo contribuire, anche nel nostro piccolo, a costruire un mondo più consapevole, gentile e rispettoso.",
+      "author": "Ornella Trevisan e Martina Sartore",
+      "role": "Fondatrici di èSenza"
+    }
+  },
+  "howItWorks": {
+    "hero": {
+      "title": "Come funziona",
+      "titleJa": "Ricette italiane semplici da preparare a casa",
+      "subtitle": "Ogni miscela è pensata per essere semplice da utilizzare, lasciando spazio al piacere di cucinare.",
+      "subtitleJa": "In ogni vasetto trovi ingredienti biologici già dosati e miscelati secondo la nostra ricetta.",
+      "cta": "Inizia il tuo viaggio"
+    },
+    "process": {
+      "eyebrow": "Il processo",
+      "title": "Aggiungi, Mescola, Cucina, Gusta",
+      "titleJa": "Il piacere di cucinare, in modo semplice",
+      "subtitle": "Per preparare ogni ricetta bastano pochi ingredienti freschi, come acqua, olio, uova, latte o burro."
+    },
+    "steps": {
+      "step1Tag": "SCEGLI",
+      "step1Title": "Scegli la tua miscela",
+      "step1TitleJa": "Seleziona la ricetta che desideri preparare",
+      "step1Body": "Puoi scegliere tra le miscele èSenza per torte, biscotti, pane, pizza e zuppe.",
+      "step1BodyJa": "Ogni vasetto contiene ingredienti biologici già dosati e miscelati secondo la ricetta originale, per offrirti un risultato autentico e sempre equilibrato.",
+      "step2Tag": "PREPARA",
+      "step2Title": "Aggiungi gli ingredienti freschi",
+      "step2TitleJa": "Completa la ricetta con pochi ingredienti di uso quotidiano",
+      "step2Body": "Aggiungi acqua, olio, latte, uova o burro seguendo le istruzioni riportate sulla confezione.",
+      "step2BodyJa": "Ogni prodotto include una guida semplice e dettagliata che ti accompagna passo dopo passo.",
+      "step3Tag": "GUSTA",
+      "step3Title": "Dai vita alla ricetta",
+      "step3TitleJa": "Riscopri il piacere di cucinare",
+      "step3Body": "Unisci gli ingredienti, mescola con cura e lascia che il tempo faccia il resto.",
+      "step3BodyJa": "Bastano pochi semplici gesti per trasformare ogni preparazione in un momento di tranquillità, attenzione e condivisione."
+    },
+    "trust": {
+      "item1Title": "Ingredienti Biologici",
+      "item1TitleJa": "Materie prime biologiche certificate, selezionate con cura per garantire qualità e genuinità.",
+      "item2Title": "Made in Italy",
+      "item2TitleJa": "Ricette italiane realizzate con ingredienti selezionati e ispirate alla tradizione dei piccoli produttori.",
+      "item3Title": "Filosofia Zero Sprechi",
+      "item3TitleJa": "Pensate nel rispetto dell'ambiente, con un approccio sostenibile che valorizza ogni ingrediente."
+    },
+    "shipping": {
+      "title": "Dall'Italia alla tua cucina",
+      "subtitle": "Miscele pronte pensate per portare il gusto autentico della tradizione italiana nelle cucine di tutto il mondo, con ricette semplici, ingredienti selezionati e la massima trasparenza.",
+      "zonesTitle": "Le nostre preparazioni",
+      "zonesTitleJa": "Miscele disponibili",
+      "zone1Area": "Torte e Muffin",
+      "zone1Time": "Ricette soffici, profumate e perfette per ogni occasione.",
+      "zone2Area": "Biscotti e Frolle",
+      "zone2Time": "La semplicità della tradizione italiana in ogni morso.",
+      "zone3Area": "Pane, Pizza e Zuppe",
+      "zone3Time": "Preparazioni salate dal gusto autentico, ideali per la tavola di tutti i giorni.",
+      "tempTitle": "Preparazione semplice e guidata",
+      "tempTitleJa": "Istruzioni chiare, risultato garantito",
+      "tempBody": "Ogni miscela è accompagnata da istruzioni dettagliate e facili da seguire. Aggiungi gli ingredienti richiesti, mescola e lascia che la ricetta prenda forma: in pochi passaggi potrai portare in tavola il vero sapore della tradizione italiana.",
+      "cta": "Inizia il tuo viaggio"
+    }
+  },
+  "shop": {
+    "emptySearch": "No results with this search, please try again",
+    "searchProduct": "Search for a product",
+    "hero": {
+      "title": "Acquista le miscele èSenza",
+      "titleJa": "Miscele pronte dall’Italia",
+      "subtitle": "Ricette in vasetto realizzate con ingredienti biologici certificati, create per portare l’autentica cucina italiana nella vita di ogni giorno.",
+      "subtitleJa": "Prodotti semplici, trasparenti e di alta qualità, pensati per i consumatori internazionali."
+    },
+    "filters": {
+      "all": "Tutti",
+      "allJa": "Tutte le miscele",
+      "sweet": "Dolci",
+      "sweetJa": "Torte, muffin, biscotti e frolle",
+      "savory": "Salati",
+      "savoryJa": "Pane, pizza e zuppe",
+      "vegan": "Vegani",
+      "gf": "Senza glutine"
+    },
+    "productCount": "{count} prodotti",
+    "loadMore": "Carica altri prodotti",
+    "newsletter": {
+      "title": "Entra nel mondo èSenza",
+      "subtitle": "Scopri ricette, piccoli produttori, scelte stagionali e un modo più consapevole di fare la spesa."
+    }
+  },
+  "product": {
+    "breadcrumb": {
+      "home": "Home",
+      "shop": "Shop"
+    },
+    "taxNote": "IVA inclusa",
+    "addToCart": "Aggiungi al carrello",
+    "buyOnAmazon": "Buy on Amazon 🛒",
+    "howToPrepare": "Come prepararlo",
+    "howToPrepareJa": "Istruzioni passo dopo passo",
+    "sustainabilityTitle": "Ingredienti biologici e packaging responsabile",
+    "sustainabilityBody": "Ogni vasetto contiene una base di ingredienti biologici, già dosati e miscelati secondo la ricetta èSenza. Il progetto segue un approccio zero sprechi fondato sulla trasparenza, su filiere chiare e sulla cura dell’ambiente.",
+    "tabs": {
+      "tips": "Tips",
+      "nutrition": "Valori nutrizionali",
+      "reviews": "Recensioni"
+    }
+  },
+  "footer": {
+    "tagline": "Un modo più consapevole di fare la spesa, con miscele biologiche italiane semplici da preparare.",
+    "shopTitle": "Shop",
+    "bestsellers": "Miscele pronte",
+    "vegan": "Miscele vegane",
+    "sweets": "Miscele dolci",
+    "gifts": "Confezioni regalo",
+    "companyTitle": "Azienda",
+    "about": "Chi siamo",
+    "maps": "Google Maps",
+    "newsletterTitle": "Newsletter",
+    "newsletterPlaceholder": "La tua email",
+    "newsletterButton": "Iscriviti",
+    "copyright": "© {year} èSenza Japan. Tutti i diritti riservati.",
+    "privacy": "Informativa sulla privacy",
+    "terms": "Termini di servizio"
+  },
+  "newsletter": {
+    "title": "Entra nella famiglia èSenza",
+    "subtitle": "Ricevi direttamente nella tua casella di posta ricette, storie di piccoli produttori, idee sulla sostenibilità e aggiornamenti esclusivi.",
+    "placeholder": "Il tuo indirizzo email",
+    "button": "Iscriviti"
+  },
+  "common": {
+    "viewAll": "Vedi tutto",
+    "backToShop": "Torna allo shop",
+    "backToHome": "Back to Home",
+    "addToCart": "Aggiungi al carrello",
+    "yen": "¥"
+  },
+  "cart": {
+    "productAdded": "Product added to the cart",
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "orderSummary": "Order Summary",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "shippingCalc": "Calculated at checkout",
+    "total": "Total",
+    "checkout": "Proceed to Checkout",
+    "processing": "Processing…",
+    "continueShopping": "Continue Shopping",
+    "backToCart": "Back to Cart",
+    "secureNote": "Secure checkout powered by Stripe",
+    "checkoutError": "Something went wrong. Please try again."
+  },
+  "notifications": {
+    "close": "Close notification"
+  },
+  "checkout": {
+    "success": {
+      "title": "Order Confirmed!",
+      "message": "Thank you for your order. You will receive a confirmation email shortly. We'll prepare your organic Italian mixes with care."
+    },
+    "cancel": {
+      "title": "Payment Cancelled",
+      "message": "Your order was not completed. Your cart is still saved — you can go back and try again whenever you're ready."
+    }
+  }
+}
