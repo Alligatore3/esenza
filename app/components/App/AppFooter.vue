@@ -43,7 +43,7 @@ const email = ref('')
           <h3 class="text-sm font-semibold uppercase tracking-wider text-white/40 mb-4">
             {{ t('footer.companyTitle') }}
           </h3>
-          <ul class="space-y-2.5">
+          <ul class="space-y-1">
             <li>
               <NuxtLink
                 :to="localePath('/about')"
@@ -53,28 +53,31 @@ const email = ref('')
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink
-                :to="localePath('/about')"
-                class="text-white/70 hover:text-primary text-sm transition-colors duration-200"
+              <a
+                class="text-white/40 hover:text-white/70 text-xs transition-colors duration-200"
+                href="https://www.instagram.com/esenza_schio"
+                target="_blank"
               >
-                {{ t('footer.sustainability') }}
-              </NuxtLink>
+                Instagram
+              </a>
             </li>
             <li>
-              <NuxtLink
-                :to="localePath('/')"
-                class="text-white/70 hover:text-primary text-sm transition-colors duration-200"
+              <a
+                class="text-white/40 hover:text-white/70 text-xs transition-colors duration-200"
+                href="https://www.facebook.com/esenzaschio"
+                target="_blank"
               >
-                {{ t('footer.journal') }}
-              </NuxtLink>
+                Facebook
+              </a>
             </li>
             <li>
-              <NuxtLink
-                :to="localePath('/')"
-                class="text-white/70 hover:text-primary text-sm transition-colors duration-200"
+              <a
+                class="text-white/40 hover:text-white/70 text-xs transition-colors duration-200"
+                href="https://maps.app.goo.gl/BRxGyBXJwNSYKC4DA"
+                target="_blank"
               >
-                {{ t('footer.contact') }}
-              </NuxtLink>
+                {{ t('footer.maps') }}
+              </a>
             </li>
           </ul>
         </div>
@@ -105,7 +108,9 @@ const email = ref('')
       <div
         class="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4"
       >
-        <p class="text-white/40 text-xs">{{ t('footer.copyright') }}</p>
+        <p class="text-white/40 text-xs">
+          {{ t('footer.copyright', { year: new Date().getUTCFullYear() }) }}
+        </p>
         <div class="flex items-center gap-4">
           <a
             target="_blank"
