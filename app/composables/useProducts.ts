@@ -5,6 +5,7 @@ const DEFAULT_EMPTY_PRODUCTS: Product[] = []
 // Maps Nuxt i18n locale codes to DatoCMS locale identifiers.
 const DATO_LOCALE_MAP: Record<string, string> = {
   en: 'en',
+  it: 'it_IT',
   ja: 'japa',
 }
 

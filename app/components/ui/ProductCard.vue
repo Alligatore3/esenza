@@ -12,9 +12,13 @@ const cart = useCartStore()
 
 const localePath = useLocalePath()
 
+const { currentCurrencyLabel } = useCurrencies()
+
 const notificationsStore = useNotificationsStore()
 
-const formattedPrice = computed(() => `¥${props.product.price.toLocaleString()}`)
+const formattedPrice = computed(
+  () => `${currentCurrencyLabel.value} ${props.product.price.toLocaleString()}`,
+)
 
 const addToProduct = (product: Product) => {
   cart.add(product)
@@ -63,7 +67,9 @@ const addToProduct = (product: Product) => {
       </NuxtLink>
 
       <div class="flex items-center justify-between mt-2 gap-3">
-        <span class="font-bold text-text-main dark:text-white">{{ formattedPrice }}</span>
+        <span class="font-bold text-text-main dark:text-white flex-shrink-0">{{
+          formattedPrice
+        }}</span>
 
         <p
           class="text-xs text-text-muted dark:text-white/50 mt-0.5"

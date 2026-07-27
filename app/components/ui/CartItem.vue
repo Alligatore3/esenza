@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import type { CartItem } from '~/stores/cart'
 
-const props = defineProps<{ item: CartItem }>()
-
 const cart = useCartStore()
+
 const localePath = useLocalePath()
 
+const { currentCurrencyLabel } = useCurrencies()
+
 const formattedPrice = computed(
-  () => `¥${(props.item.product.price * props.item.quantity).toLocaleString()}`,
+  () => `${currentCurrencyLabel.value} ${item.product.price.toLocaleString()}`,
 )
 </script>
 
