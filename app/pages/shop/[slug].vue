@@ -20,7 +20,7 @@ watchEffect(() => {
 })
 
 useSeoMeta({
-  title: () => (product.value ? `${product.value.name} — èSenza Japan` : 'èSenza Japan'),
+  title: () => (product.value ? `${product.value.name} — èSenza` : 'èSenza'),
   description: () => product.value?.description ?? '',
 })
 </script>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'About — èSenza Japan',
-  description: 'The story of èSenza Japan. Born in Italy, loved in Japan. Zero waste, full taste.',
+  title: 'About — èSenza',
+  description: 'The story of èSenza. Born in Italy, loved in Japan. Zero waste, full taste.',
 })
 </script>
 

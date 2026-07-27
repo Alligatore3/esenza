@@ -35,7 +35,7 @@ const filteredProducts = computed(() => {
 })
 
 useSeoMeta({
-  title: 'Shop — èSenza Japan',
+  title: 'Shop — èSenza',
   description:
     'Browse all our premium Italian organic jar mixes. Filter by category, vegan, or gluten-free.',
 })

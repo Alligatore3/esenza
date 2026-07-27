@@ -3,17 +3,21 @@ const { t } = useI18n()
 const localePath = useLocalePath()
 const cart = useCartStore()
 
-useSeoMeta({ title: 'Order Confirmed — èSenza Japan' })
+useSeoMeta({ title: 'Order Confirmed — èSenza' })
 
 // Clear cart once the success page loads
 onMounted(() => cart.clear())
 </script>
 
 <template>
-  <div class="w-full min-h-screen bg-background-light dark:bg-background-dark flex items-center justify-center px-4 py-16">
+  <div
+    class="w-full min-h-screen bg-background-light dark:bg-background-dark flex items-center justify-center px-4 py-16"
+  >
     <div class="max-w-md w-full text-center">
       <!-- Success icon -->
-      <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+      <div
+        class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6"
+      >
         <span class="material-symbols-outlined text-primary text-[40px]">check_circle</span>
       </div>
 

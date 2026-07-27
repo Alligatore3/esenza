@@ -10,7 +10,7 @@ const notificationsStore = useNotificationsStore()
 const loading = ref(false)
 
 useSeoMeta({
-  title: 'Cart — èSenza Japan',
+  title: 'Cart — èSenza',
 })
 
 async function proceedToCheckout() {

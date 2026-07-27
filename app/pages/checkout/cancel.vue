@@ -2,15 +2,21 @@
 const { t } = useI18n()
 const localePath = useLocalePath()
 
-useSeoMeta({ title: 'Payment Cancelled — èSenza Japan' })
+useSeoMeta({ title: 'Payment Cancelled — èSenza' })
 </script>
 
 <template>
-  <div class="w-full min-h-screen bg-background-light dark:bg-background-dark flex items-center justify-center px-4 py-16">
+  <div
+    class="w-full min-h-screen bg-background-light dark:bg-background-dark flex items-center justify-center px-4 py-16"
+  >
     <div class="max-w-md w-full text-center">
       <!-- Cancel icon -->
-      <div class="w-20 h-20 rounded-full bg-yellow-100 dark:bg-yellow-900/20 flex items-center justify-center mx-auto mb-6">
-        <span class="material-symbols-outlined text-yellow-600 dark:text-yellow-400 text-[40px]">cancel</span>
+      <div
+        class="w-20 h-20 rounded-full bg-yellow-100 dark:bg-yellow-900/20 flex items-center justify-center mx-auto mb-6"
+      >
+        <span class="material-symbols-outlined text-yellow-600 dark:text-yellow-400 text-[40px]"
+          >cancel</span
+        >
       </div>
 
       <h1 class="text-2xl md:text-3xl font-extrabold text-text-main dark:text-white mb-3">

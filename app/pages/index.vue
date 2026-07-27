@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'èSenza Japan — Italian Organic Mixes',
+  title: 'èSenza — Italian Organic Mixes',
   description: 'Premium Italian organic jar mixes. Crafted in Italy, enjoyed in Japan.',
 })
 </script>
