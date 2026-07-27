@@ -9,11 +9,15 @@ const { t } = useI18n()
 
 const cart = useCartStore()
 
+const { currentCurrencyLabel } = useCurrencies()
+
 const notificationsStore = useNotificationsStore()
 
 const activeTab = ref<'tips' | 'nutrition' | 'reviews'>('tips')
 
-const formattedPrice = computed(() => `¥${props.product.price.toLocaleString()}`)
+const formattedPrice = computed(
+  () => `${currentCurrencyLabel.value} ${props.product.price.toLocaleString()}`,
+)
 
 const increment = () => {
   quantity.value++
