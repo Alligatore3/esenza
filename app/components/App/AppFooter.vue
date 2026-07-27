@@ -27,7 +27,7 @@ const email = ref('')
             {{ t('footer.shopTitle') }}
           </h3>
           <ul class="space-y-2.5">
-            <li v-for="item in ['bestsellers', 'vegan', 'sweets', 'gifts']" :key="item">
+            <li v-for="item in ['bestsellers', 'vegan', 'sweets']" :key="item">
               <NuxtLink
                 :to="localePath('/shop')"
                 class="text-white/70 hover:text-primary text-sm transition-colors duration-200"

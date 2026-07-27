@@ -33,7 +33,7 @@ const PRODUCTS_QUERY = `
       tips(locale: $locale) { value }
       primaryimage { url alt }
       galleryimages { url alt }
-      price
+      price(locale: $locale)
     }
   }
 `
