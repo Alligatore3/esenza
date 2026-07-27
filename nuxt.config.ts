@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: 'en' },
-      title: 'èSenza Japan — Italian Organic Mixes',
+      title: 'èSenza — Italian Organic Mixes',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
